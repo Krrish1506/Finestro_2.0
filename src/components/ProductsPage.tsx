@@ -1,7 +1,8 @@
-import { Heart, LifeBuoy, Shield, TrendingUp, Search, FileCheck, Upload, FolderLock, Bell, BarChart3 } from "lucide-react";
+import { Heart, LifeBuoy, Shield, TrendingUp, Search, FileCheck, Upload, FolderLock, Bell, BarChart3, ArrowRight } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { motion } from "framer-motion";
 
 export function ProductsPage() {
   const features = [
@@ -42,8 +43,8 @@ export function ProductsPage() {
       id: "health",
       name: "Health Insurance",
       icon: Heart,
-      color: "text-red-600",
-      bgColor: "bg-red-50",
+      color: "text-emerald-600",
+      bgColor: "bg-emerald-50/50",
       description: "Comprehensive health insurance solutions with cashless treatment and family coverage options.",
       plans: [
         { name: "Individual Health Plans", coverage: "₹5L - ₹1Cr", features: ["Cashless hospitalization", "Pre & post hospitalization", "Daycare procedures"] },
@@ -56,8 +57,8 @@ export function ProductsPage() {
       id: "life",
       name: "Life Insurance",
       icon: LifeBuoy,
-      color: "text-blue-600",
-      bgColor: "bg-blue-50",
+      color: "text-indigo-600",
+      bgColor: "bg-indigo-50/50",
       description: "Life coverage solutions including term plans, endowment, and ULIPs for financial security.",
       plans: [
         { name: "Term Insurance", coverage: "₹25L - ₹10Cr", features: ["Pure protection", "Affordable premiums", "Rider options"] },
@@ -70,8 +71,8 @@ export function ProductsPage() {
       id: "general",
       name: "General Insurance",
       icon: Shield,
-      color: "text-green-600",
-      bgColor: "bg-green-50",
+      color: "text-blue-600",
+      bgColor: "bg-blue-50/50",
       description: "Protect assets with motor, home, travel, and business insurance solutions.",
       plans: [
         { name: "Motor Insurance", coverage: "IDV Based", features: ["Comprehensive coverage", "Third-party liability", "Cashless repairs"] },
@@ -84,8 +85,8 @@ export function ProductsPage() {
       id: "mutual-funds",
       name: "Mutual Funds",
       icon: TrendingUp,
-      color: "text-purple-600",
-      bgColor: "bg-purple-50",
+      color: "text-violet-600",
+      bgColor: "bg-violet-50/50",
       description: "Diversified investment options across equity, debt, and hybrid mutual funds.",
       plans: [
         { name: "Equity Funds", coverage: "Market-linked", features: ["High growth potential", "Long-term wealth", "Tax benefits"] },
@@ -99,71 +100,100 @@ export function ProductsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">Our Products & Solutions</h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-            Comprehensive tools for managing Health, Life, General Insurance, and Mutual Funds—all in one platform.
-          </p>
+      <section className="bg-brand-dark relative overflow-hidden text-white py-24 px-4 sm:px-6 lg:px-8">
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-indigo-500/20 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-violet-600/20 blur-[120px] rounded-full"></div>
+        
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tight"
+          >
+            Digital <span className="gradient-text">Insurance</span> Infrastructure
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto font-medium"
+          >
+            Comprehensive tools for managing Health, Life, General Insurance, and Mutual Funds—all in one premium platform.
+          </motion.p>
         </div>
       </section>
 
       {/* Key Features Overview */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl mb-4">Powerful Features for Every Product</h2>
-            <p className="text-xl text-gray-600">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Powerful Features for Every Product</h2>
+            <p className="text-lg text-slate-600">
               Every product category comes with these comprehensive tools
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
-                    <feature.icon className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <CardTitle>{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{feature.description}</p>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                whileHover={{ y: -8 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3 }}
+              >
+                <Card className="glass h-full border-slate-200/50 shadow-ambient group cursor-pointer">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                      <feature.icon className="h-6 w-6 text-indigo-600 group-hover:text-white" />
+                    </div>
+                    <CardTitle className="text-xl font-bold flex items-center justify-between">
+                      {feature.title}
+                      <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-indigo-600" />
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slate-600 leading-relaxed font-medium">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Product Categories with Tabs */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Tabs defaultValue="health" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 h-auto gap-2 bg-transparent mb-8">
+            <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 h-auto gap-4 bg-transparent mb-12">
               {productCategories.map((category) => (
                 <TabsTrigger
                   key={category.id}
                   value={category.id}
-                  className="flex flex-col items-center gap-2 py-4 data-[state=active]:bg-white data-[state=active]:shadow-md"
+                  className="flex flex-col items-center gap-3 py-6 rounded-2xl glass data-[state=active]:bg-white data-[state=active]:shadow-ambient data-[state=active]:border-indigo-200/50 transition-all duration-300"
                 >
-                  <category.icon className={`h-6 w-6 ${category.color}`} />
-                  <span>{category.name}</span>
+                  <div className={`p-2 rounded-xl bg-white shadow-sm`}>
+                    <category.icon className={`h-6 w-6 ${category.color}`} />
+                  </div>
+                  <span className="font-bold text-slate-900">{category.name}</span>
                 </TabsTrigger>
               ))}
             </TabsList>
 
             {productCategories.map((category) => (
               <TabsContent key={category.id} value={category.id}>
-                <div className="space-y-8">
+                <div className="space-y-12">
                   {/* Category Header */}
-                  <div className={`${category.bgColor} rounded-lg p-8`}>
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center">
-                        <category.icon className={`h-8 w-8 ${category.color}`} />
+                  <div className={`glass relative rounded-3xl p-10 overflow-hidden border-slate-200/50`}>
+                    <div className={`absolute top-0 left-0 w-1.5 h-full ${category.color.replace('text-', 'bg-')}`}></div>
+                    <div className="flex items-center gap-6 relative z-10">
+                      <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-ambient-lg">
+                        <category.icon className={`h-10 w-10 ${category.color}`} />
                       </div>
                       <div>
-                        <h2 className="text-3xl">{category.name}</h2>
-                        <p className="text-gray-600 mt-2">{category.description}</p>
+                        <h2 className="text-4xl font-bold text-slate-900 tracking-tight">{category.name}</h2>
+                        <p className="text-lg text-slate-600 mt-2 max-w-2xl font-medium">{category.description}</p>
                       </div>
                     </div>
                   </div>

@@ -11,7 +11,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from "./ui/dialog";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
+import { motion } from "framer-motion";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, Legend, ResponsiveContainer } from "recharts";
 import {
   getDocuments,
@@ -384,20 +385,40 @@ export function DashboardPage() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
           {stats.map((stat, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer">
-              <CardHeader className="flex flex-row items-center justify-between pb-2">
-                <CardTitle className="text-sm">{stat.title}</CardTitle>
-                <div className={`w-10 h-10 ${stat.bgColor} rounded-lg flex items-center justify-center`}>
-                  <stat.icon className={`h-5 w-5 ${stat.color}`} />
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl mb-1">{stat.value}</div>
-                <p className="text-xs text-gray-600">{stat.change}</p>
-              </CardContent>
-            </Card>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+              className="group relative"
+            >
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-violet-500 rounded-[22px] opacity-0 group-hover:opacity-100 transition duration-300 blur-sm"></div>
+              <Card className="glass relative rounded-[20px] border-slate-200/50 shadow-ambient overflow-hidden">
+                <CardHeader className="flex flex-row items-center justify-between pb-2">
+                  <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">{stat.title}</span>
+                  <div className={`w-10 h-10 ${stat.bgColor} rounded-xl flex items-center justify-center shadow-inner`}>
+                    <stat.icon className={`h-5 w-5 ${stat.color}`} />
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold tracking-tight text-slate-900 mb-1">{stat.value}</div>
+                  <div className="flex items-center gap-1.5">
+                    <span className={`text-xs font-bold px-1.5 py-0.5 rounded-full ${
+                      stat.change.startsWith('+') ? 'bg-emerald-50 text-emerald-600' : 'bg-slate-100 text-slate-600'
+                    }`}>
+                      {stat.change}
+                    </span>
+                    <span className="text-[10px] text-slate-400 font-medium">vs last month</span>
+                  </div>
+                </CardContent>
+                
+                {/* Decorative Sparkline pattern (SVG) */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 opacity-20 bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
+              </Card>
+            </motion.div>
           ))}
         </div>
 

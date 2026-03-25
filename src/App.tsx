@@ -9,6 +9,7 @@ import { ContactPage } from "./components/ContactPage";
 import { SecurityPage } from "./components/SecurityPage";
 import { FeaturesPage } from "./components/FeaturesPage";
 import { Toaster } from "./components/ui/sonner";
+import { motion, AnimatePresence } from "framer-motion";
 
 type PageType = "home" | "about" | "products" | "features" | "dashboard" | "contact" | "security";
 
@@ -46,10 +47,20 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[#F8FAFC]">
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
-      <main className="flex-1">
-        {renderPage()}
+      <main className="flex-1 relative overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentPage}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+          >
+            {renderPage()}
+          </motion.div>
+        </AnimatePresence>
       </main>
       <Footer onNavigate={handleNavigate} />
       <Toaster position="top-right" richColors />
