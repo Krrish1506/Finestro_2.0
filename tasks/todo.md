@@ -25,4 +25,4 @@
 - [x] Update `src/components/ProductsPage.tsx` — hover-reveal arrow on features, category glassmorphisme' arrow, deepened shadow
 
 ## Review
-<!-- Add notes here after each phase is done -->
+- [x] Fixed versioned imports in `src/components/ui/*.tsx` to resolve lint errors and build warnings (removing `@version` suffixes from Radix, CVA, Vaul, and Lucide imports).
