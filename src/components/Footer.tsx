@@ -10,6 +10,10 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import finestroIcon from "../Finestro_removed bg.png";
+
 interface FooterProps {
   onNavigate: (page: string) => void;
 }
@@ -167,7 +171,16 @@ export function Footer({ onNavigate }: FooterProps) {
                   boxShadow: "0 0 16px rgba(59,130,246,0.40)",
                 }}
               >
-                <Shield size={18} color="#fff" strokeWidth={1.5} />
+                <img 
+                  src={finestroIcon} 
+                  alt="Finestro" 
+                  style={{ 
+                    width: "20px", 
+                    height: "20px", 
+                    objectFit: "contain",
+                    filter: "brightness(0) invert(1)"
+                  }} 
+                />
               </div>
               <span
                 style={{

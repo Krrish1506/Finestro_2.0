@@ -7,7 +7,7 @@ import { Label } from "./ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { motion } from "framer-motion";
 
-export function ContactPage() {
+export function ContactPage({ onNavigate }: { onNavigate: (page: string) => void }) {
   const contactMethods = [
     {
       icon: Phone,
@@ -51,22 +51,47 @@ export function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-brand-dark text-white pt-16 pb-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-violet-500/10 blur-[100px] rounded-full"></div>
-        <div className="max-w-7xl mx-auto text-center relative z-10">
+      <section
+        className="relative text-white overflow-hidden min-h-[80vh] flex items-center px-4 sm:px-6 lg:px-8"
+        style={{
+          background: 'linear-gradient(160deg, #0a1628 0%, #0052CC 35%, #0059E6 65%, #0066FF 100%)',
+          paddingTop: '72px',
+          paddingBottom: '80px',
+        }}
+      >
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+          <div className="absolute top-20 right-10 w-[600px] h-[600px] bg-gradient-to-br from-blue-500/10 to-transparent blur-[150px] rounded-full" />
+          <div className="absolute -bottom-40 -left-40 w-[700px] h-[700px] bg-gradient-to-tr from-blue-400/10 via-blue-500/5 to-transparent blur-[160px] rounded-full" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,transparent_70%)]" />
+        </div>
+        <div className="max-w-7xl mx-auto text-center relative z-10 w-full">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-indigo-300 text-xs font-bold uppercase tracking-widest mb-6">
-              <Sparkles className="size-3" />
+            <motion.div
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/40 text-white text-[10px] font-black uppercase tracking-widest mb-8 backdrop-blur-md"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
+              <Sparkles className="size-4" />
               <span>Support Excellence</span>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
-              Get in <span className="gradient-text">Touch</span>
+            </motion.div>
+            <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tight" style={{ color: '#F0F9FF', textShadow: '0 2px 20px rgba(0,0,0,0.35)' }}>
+              Get in{' '}
+              <span style={{
+                background: 'linear-gradient(90deg, #7DD3FC 0%, #38BDF8 50%, #BAE6FD 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                filter: 'drop-shadow(0 0 20px rgba(125,211,252,0.45))'
+              }}>
+                Touch
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto font-medium leading-relaxed">
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto font-medium leading-relaxed" style={{ color: 'rgba(224,242,254,0.92)', textShadow: '0 1px 8px rgba(0,0,0,0.25)' }}>
               Have questions about our enterprise infrastructure? Our team of fintech experts is ready to help you scale.
             </p>
           </motion.div>
@@ -74,9 +99,9 @@ export function ContactPage() {
       </section>
 
       {/* Contact Methods */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC] -mt-12 relative z-20">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactMethods.map((method, index) => (
               <motion.div
                 key={index}
@@ -84,15 +109,15 @@ export function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="glass text-center rounded-[2rem] border-slate-200/50 shadow-ambient p-2 group hover:bg-white transition-all cursor-pointer">
-                  <CardHeader>
-                    <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-ambient group-hover:shadow-ambient-lg transition-all border border-slate-100/50">
-                      <method.icon className="h-8 w-8 text-blue-600" />
+                <Card className="bg-white text-center rounded-[2.5rem] border border-slate-200 shadow-sm p-4 group hover:shadow-ambient-lg hover:-translate-y-2 hover:border-blue-200 transition-all duration-500 cursor-pointer h-full">
+                  <CardHeader className="p-6 pb-2">
+                    <div className="w-20 h-20 bg-slate-50 rounded-[1.5rem] flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:bg-blue-50 group-hover:scale-110 transition-all duration-500 border border-slate-100 group-hover:border-blue-100">
+                      <method.icon className="h-10 w-10 text-slate-400 group-hover:text-blue-600 transition-colors" strokeWidth={1.5} />
                     </div>
-                    <CardTitle className="text-xl font-bold text-slate-900">{method.title}</CardTitle>
+                    <CardTitle className="text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors tracking-tight">{method.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <a href={method.link} className="text-blue-600 font-bold mb-3 block text-lg">
+                  <CardContent className="p-6 pt-4">
+                    <a href={method.link} className="text-blue-600 font-black mb-4 block text-lg tracking-tight hover:underline underline-offset-4">
                       {method.value}
                     </a>
                     <p className="text-slate-500 font-medium leading-relaxed">{method.description}</p>
@@ -105,72 +130,76 @@ export function ContactPage() {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-20">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.05)_0%,transparent_60%)] pointer-events-none" />
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-slate-900 mb-6 tracking-tight">Send Us a Message</h2>
-              <p className="text-lg text-slate-600 mb-12 font-medium leading-relaxed">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-slate-500 text-[10px] font-black uppercase tracking-widest mb-6">
+                GET STARTED
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">Send Us a Message</h2>
+              <p className="text-xl text-slate-500 mb-12 font-medium leading-relaxed">
                 Fill out the form below and our partnership division will reach out within one business cycle.
               </p>
-              <Card className="glass rounded-[2rem] border-slate-200/50 shadow-ambient-lg p-4 overflow-hidden relative">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-3xl rounded-full"></div>
-                <CardContent className="pt-6 relative z-10">
-                  <form className="space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div className="space-y-3">
-                        <Label htmlFor="firstName" className="font-bold text-slate-700">First Name</Label>
-                        <Input id="firstName" placeholder="Vikram" className="rounded-xl border-slate-200 bg-white/50 h-12" required />
+              <Card className="bg-white rounded-[3rem] border border-slate-200 shadow-ambient-lg p-6 lg:p-10 overflow-hidden relative">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[80px] rounded-full pointer-events-none"></div>
+                <CardContent className="p-0 relative z-10">
+                  <form className="space-y-8">
+                    <div className="grid sm:grid-cols-2 gap-8">
+                      <div className="space-y-4">
+                        <Label htmlFor="firstName" className="font-black text-sm text-slate-700 uppercase tracking-widest">First Name</Label>
+                        <Input id="firstName" placeholder="Vikram" className="rounded-2xl border-slate-200 bg-slate-50 hover:bg-white hover:border-blue-300 focus:border-blue-500 focus:ring-blue-500/20 h-14 text-lg transition-all shadow-sm" required />
                       </div>
-                      <div className="space-y-3">
-                        <Label htmlFor="lastName" className="font-bold text-slate-700">Last Name</Label>
-                        <Input id="lastName" placeholder="Sharma" className="rounded-xl border-slate-200 bg-white/50 h-12" required />
+                      <div className="space-y-4">
+                        <Label htmlFor="lastName" className="font-black text-sm text-slate-700 uppercase tracking-widest">Last Name</Label>
+                        <Input id="lastName" placeholder="Sharma" className="rounded-2xl border-slate-200 bg-slate-50 hover:bg-white hover:border-blue-300 focus:border-blue-500 focus:ring-blue-500/20 h-14 text-lg transition-all shadow-sm" required />
                       </div>
                     </div>
                     
-                    <div className="space-y-3">
-                      <Label htmlFor="email" className="font-bold text-slate-700">Business Email</Label>
-                      <Input id="email" type="email" placeholder="v.sharma@agency.in" className="rounded-xl border-slate-200 bg-white/50 h-12" required />
+                    <div className="space-y-4">
+                      <Label htmlFor="email" className="font-black text-sm text-slate-700 uppercase tracking-widest">Business Email</Label>
+                      <Input id="email" type="email" placeholder="v.sharma@agency.in" className="rounded-2xl border-slate-200 bg-slate-50 hover:bg-white hover:border-blue-300 focus:border-blue-500 focus:ring-blue-500/20 h-14 text-lg transition-all shadow-sm" required />
                     </div>
                     
-                    <div className="space-y-3">
-                      <Label htmlFor="phone" className="font-bold text-slate-700">Phone Number</Label>
-                      <Input id="phone" type="tel" placeholder="+91 98765 43210" className="rounded-xl border-slate-200 bg-white/50 h-12" required />
+                    <div className="space-y-4">
+                      <Label htmlFor="phone" className="font-black text-sm text-slate-700 uppercase tracking-widest">Phone Number</Label>
+                      <Input id="phone" type="tel" placeholder="+91 98765 43210" className="rounded-2xl border-slate-200 bg-slate-50 hover:bg-white hover:border-blue-300 focus:border-blue-500 focus:ring-blue-500/20 h-14 text-lg transition-all shadow-sm" required />
                     </div>
                     
-                    <div className="space-y-3">
-                      <Label htmlFor="inquiryType" className="font-bold text-slate-700">Inquiry Type</Label>
+                    <div className="space-y-4">
+                      <Label htmlFor="inquiryType" className="font-black text-sm text-slate-700 uppercase tracking-widest">Inquiry Type</Label>
                       <Select>
-                        <SelectTrigger id="inquiryType" className="rounded-xl border-slate-200 bg-white/50 h-12">
+                        <SelectTrigger id="inquiryType" className="rounded-2xl border-slate-200 bg-slate-50 hover:bg-white hover:border-blue-300 focus:border-blue-500 focus:ring-blue-500/20 h-14 text-lg transition-all shadow-sm">
                           <SelectValue placeholder="Select intent" />
                         </SelectTrigger>
-                        <SelectContent className="rounded-xl border-slate-200">
-                          <SelectItem value="demo">Enterprise Demo</SelectItem>
-                          <SelectItem value="pricing">License Pricing</SelectItem>
-                          <SelectItem value="support">Technical Integration</SelectItem>
-                          <SelectItem value="partnership">Strategic Partnership</SelectItem>
+                        <SelectContent className="rounded-2xl border-slate-200 shadow-ambient-lg">
+                          <SelectItem value="demo" className="text-base font-medium focus:bg-blue-50 focus:text-blue-700 py-3">Enterprise Demo</SelectItem>
+                          <SelectItem value="pricing" className="text-base font-medium focus:bg-blue-50 focus:text-blue-700 py-3">License Pricing</SelectItem>
+                          <SelectItem value="support" className="text-base font-medium focus:bg-blue-50 focus:text-blue-700 py-3">Technical Integration</SelectItem>
+                          <SelectItem value="partnership" className="text-base font-medium focus:bg-blue-50 focus:text-blue-700 py-3">Strategic Partnership</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                     
-                    <div className="space-y-3">
-                      <Label htmlFor="message" className="font-bold text-slate-700">Message</Label>
+                    <div className="space-y-4">
+                      <Label htmlFor="message" className="font-black text-sm text-slate-700 uppercase tracking-widest">Message</Label>
                       <Textarea
                         id="message"
                         placeholder="Detail your operational requirements..."
-                        className="rounded-xl border-slate-200 bg-white/50 min-h-[150px]"
+                        className="rounded-2xl border-slate-200 bg-slate-50 hover:bg-white hover:border-blue-300 focus:border-blue-500 focus:ring-blue-500/20 min-h-[160px] text-lg transition-all shadow-sm resize-none"
                         required
                       />
                     </div>
                     
-                    <Button type="submit" className="w-full rounded-2xl h-14 text-lg shadow-ambient group">
+                    <Button onClick={() => onNavigate('auth')} type="submit" className="w-full rounded-2xl h-16 text-lg shadow-[0_0_30px_rgba(59,130,246,0.3)] bg-blue-600 hover:bg-blue-700 text-white font-black tracking-wide group mt-4">
                       Submit Inquiry
-                      <Send className="size-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      <Send className="size-5 ml-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </Button>
                   </form>
                 </CardContent>
@@ -178,26 +207,27 @@ export function ContactPage() {
             </motion.div>
 
             {/* Additional Info */}
-            <div className="space-y-12">
+            <div className="space-y-16">
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
+                className="pt-16 lg:pt-0"
               >
-                <h2 className="text-4xl font-bold text-slate-900 mb-10 tracking-tight">Why Partner with Us?</h2>
-                <div className="space-y-8">
+                <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-12 tracking-tight">Why Partner with Us?</h2>
+                <div className="space-y-10">
                   {[
                     { icon: Clock, title: "24/7 Redundant Systems", desc: "Our tech support never sleeps. We ensure 99.9% uptime for your agent portal." },
                     { icon: Globe, title: "Pan-India Coverage", desc: "Native support for operations in 22 regional languages." },
                     { icon: Sparkles, title: "Next-Gen Infrastructure", desc: "Built on a secure dark-mesh architecture for ultimate data isolation." }
                   ].map((item, i) => (
                     <div key={i} className="flex gap-6 items-start group">
-                      <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                        <item.icon className="size-7" />
+                      <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-[1.5rem] flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 group-hover:shadow-ambient group-hover:border-blue-600 transition-all duration-300">
+                        <item.icon className="size-7 text-slate-400 group-hover:text-white transition-colors" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
-                        <p className="text-slate-600 font-medium leading-relaxed">{item.desc}</p>
+                        <h3 className="text-xl font-black text-slate-900 mb-3 group-hover:text-blue-600 transition-colors tracking-tight">{item.title}</h3>
+                        <p className="text-slate-500 font-medium leading-relaxed text-lg">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -210,26 +240,26 @@ export function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <Card className="glass rounded-3xl border-slate-200/50 shadow-ambient">
-                  <CardHeader>
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-ambient border border-slate-100">
-                        <CreditCard className="size-6 text-blue-600" />
+                <Card className="bg-slate-50 rounded-[3rem] border border-slate-200 shadow-sm hover:shadow-ambient hover:border-blue-200 transition-all duration-300">
+                  <CardHeader className="p-8 pb-6 border-b border-slate-200/50">
+                    <div className="flex items-center gap-6">
+                      <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-slate-100">
+                        <CreditCard className="size-8 text-blue-600" />
                       </div>
                       <div>
-                        <CardTitle className="text-xl font-bold text-slate-900">Settlement Options</CardTitle>
-                        <CardDescription className="font-medium">Enterprise & subscription gateways</CardDescription>
+                        <CardTitle className="text-2xl font-black text-slate-900 tracking-tight">Settlement Options</CardTitle>
+                        <CardDescription className="text-base font-medium mt-1">Enterprise & subscription gateways</CardDescription>
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-2 gap-3">
+                  <CardContent className="p-8 pt-6">
+                    <div className="grid grid-cols-2 gap-4">
                       {paymentMethods.map((method, index) => (
                         <div
                           key={index}
-                          className="flex items-center gap-3 p-3 bg-white/50 rounded-xl border border-slate-100/50"
+                          className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm"
                         >
-                          <div className="w-5 h-5 bg-emerald-500 text-white rounded-full flex items-center justify-center text-[10px] font-bold">
+                          <div className="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-[12px] font-black shrink-0">
                             ✓
                           </div>
                           <span className="text-sm font-bold text-slate-700">{method.name}</span>
@@ -246,13 +276,15 @@ export function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <div className="glass rounded-[2rem] h-64 border-slate-200/50 shadow-ambient overflow-hidden relative group">
-                  <div className="absolute inset-0 bg-slate-100 animate-pulse group-hover:hidden"></div>
-                  <div className="absolute inset-0 flex items-center justify-center bg-indigo-50/50 group-hover:bg-indigo-50 transition-colors">
+                <div className="bg-slate-50 rounded-[3rem] h-72 border border-slate-200 shadow-sm overflow-hidden relative group cursor-pointer hover:shadow-ambient-lg transition-all duration-500">
+                  <div className="absolute inset-0 bg-slate-200 animate-pulse group-hover:hidden transition-all"></div>
+                  <div className="absolute inset-0 flex items-center justify-center bg-blue-50/50 group-hover:bg-blue-50 transition-colors duration-500 backdrop-blur-sm z-10">
                     <div className="text-center group-hover:scale-110 transition-transform duration-500">
-                      <MapPin className="h-12 w-12 text-blue-500 mx-auto mb-4" />
-                      <p className="font-bold text-slate-900">Corporate HQ: Ahmedabad, Gujarat</p>
-                      <p className="text-sm font-medium text-slate-500 mt-2">Drive In Rd, Thaltej | Open for Visits</p>
+                      <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-ambient border border-blue-100 group-hover:border-blue-300 transition-colors">
+                        <MapPin className="h-10 w-10 text-blue-600" />
+                      </div>
+                      <p className="font-black text-xl text-slate-900 tracking-tight">Corporate HQ</p>
+                      <p className="text-base font-medium text-slate-500 mt-2">Ahmedabad, Gujarat</p>
                     </div>
                   </div>
                 </div>

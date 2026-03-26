@@ -31,17 +31,17 @@ export default function App() {
       case "home":
         return <HomePage onNavigate={handleNavigate} />;
       case "about":
-        return <AboutPage />;
+        return <AboutPage onNavigate={handleNavigate} />;
       case "products":
-        return <ProductsPage />;
+        return <ProductsPage onNavigate={handleNavigate} />;
       case "features":
-        return <FeaturesPage />;
+        return <FeaturesPage onNavigate={handleNavigate} />;
       case "dashboard":
         return <DashboardPage />;
       case "contact":
-        return <ContactPage />;
+        return <ContactPage onNavigate={handleNavigate} />;
       case "security":
-        return <SecurityPage />;
+        return <SecurityPage onNavigate={handleNavigate} />;
       case "auth":
         return <AuthPage onBack={() => setCurrentPage("home")} onSuccess={() => setCurrentPage("dashboard")} />;
       default:

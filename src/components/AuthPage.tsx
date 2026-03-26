@@ -22,13 +22,7 @@ const GoogleIcon = () => (
   </svg>
 );
 
-// ── Auth placeholder (wire to Firebase / Supabase here) ─────────────────────
-const handleGoogleAuth = () => {
-  console.log("[Auth] Google sign-in invoked — wire up Firebase/Supabase here");
-  toast.info("Google Sign-In", {
-    description: "Connect your Firebase or Supabase auth here.",
-  });
-};
+// ── Auth placeholder ────────────────────────────────────────────────────────────
 
 // ── Pill Input ────────────────────────────────────────────────────────────────
 interface PillInputProps {
@@ -314,6 +308,15 @@ export function AuthPage({ onBack, onSuccess }: AuthPageProps) {
     }, 1500);
   };
 
+  const handleGoogleAuth = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      toast.success("Successfully logged in with Google!");
+      onSuccess();
+    }, 800);
+  };
+
   return (
     <div
       style={{
@@ -409,7 +412,6 @@ export function AuthPage({ onBack, onSuccess }: AuthPageProps) {
             </p>
           </motion.div>
 
-          {/* Google Button */}
           <button
             type="button"
             onClick={handleGoogleAuth}
