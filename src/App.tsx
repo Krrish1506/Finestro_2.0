@@ -8,10 +8,11 @@ import { DashboardPage } from "./components/DashboardPage";
 import { ContactPage } from "./components/ContactPage";
 import { SecurityPage } from "./components/SecurityPage";
 import { FeaturesPage } from "./components/FeaturesPage";
+import { AuthPage } from "./components/AuthPage";
 import { Toaster } from "./components/ui/sonner";
 import { motion, AnimatePresence } from "framer-motion";
 
-type PageType = "home" | "about" | "products" | "features" | "dashboard" | "contact" | "security";
+type PageType = "home" | "about" | "products" | "features" | "dashboard" | "contact" | "security" | "auth";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageType>("home");
@@ -41,28 +42,32 @@ export default function App() {
         return <ContactPage />;
       case "security":
         return <SecurityPage />;
+      case "auth":
+        return <AuthPage onBack={() => setCurrentPage("home")} onSuccess={() => setCurrentPage("dashboard")} />;
       default:
         return <HomePage onNavigate={handleNavigate} />;
     }
   };
 
+  const isAuthPage = currentPage === "auth";
+
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8FAFC]">
-      <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
-      <main className="flex-1 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-transparent">
+      {!isAuthPage && <Navigation currentPage={currentPage} onNavigate={handleNavigate} />}
+      <main className={`flex-1 relative overflow-hidden ${isAuthPage ? "" : "pt-[72px]"}`}>
         <AnimatePresence mode="wait">
           <motion.div
             key={currentPage}
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: isAuthPage ? 0 : 12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+            exit={{ opacity: 0, y: isAuthPage ? 0 : -6 }}
+            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
           >
             {renderPage()}
           </motion.div>
         </AnimatePresence>
       </main>
-      <Footer onNavigate={handleNavigate} />
+      {!isAuthPage && <Footer onNavigate={handleNavigate} />}
       <Toaster position="top-right" richColors />
     </div>
   );
