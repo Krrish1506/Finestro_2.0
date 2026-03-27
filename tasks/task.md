@@ -1,15 +1,8 @@
-# Tasks
+# Breathing Space Upgrade
 
-- [/] Navigation Refinement (Premium Triple-Pill)
-    - [ ] Separate Logo, Links, and CTA into three distinct pills
-    - [ ] Apply `bg-secondary/90`, `backdrop-blur-xl`, and `border-2 border-white/20` (Thick Border)
-    - [ ] Implement Logo hover effect (Expanding pill to reveal "Finestro")
-    - [ ] Create animated gradient indicator for active links
-    - [ ] Desktop-only implementation (Ensure mobile remains functional but untouched for now)
-- [ ] Auth Page Implementation
-    - [ ] Create `AuthPage.tsx` with Login/Signup modes
-    - [ ] Implement "Continue with Google"
-    - [ ] Add premium framer-motion animations
-- [ ] Integration
-    - [ ] Update `App.tsx` routes
-    - [ ] Verification and Polish
+- [ ] `HomePage.tsx`: Increase vertical paddings (py-24), grid gaps (gap-8), text bottom margins.
+- [ ] `DashboardPage.tsx`: Expand card paddings, grid gaps, and charting layout spacing.
+- [ ] `ProductsPage.tsx`: Enhance section vertical separation and intra-grid margins.
+- [ ] `SecurityPage.tsx`: Boost padding in architecture and compliance blocks.
+- [ ] `AboutPage.tsx` / `ContactPage.tsx`: Scale up text leading and section margins.
+- [ ] `Footer.tsx`: Expand internal grid gaps.

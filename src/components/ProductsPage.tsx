@@ -135,7 +135,7 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           >
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/40 text-white text-[10px] font-black uppercase tracking-widest mb-8 backdrop-blur-md"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/40 text-white text-[10px] font-black uppercase tracking-widest mb-16 backdrop-blur-md"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -143,7 +143,7 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
               <Sparkles className="size-4" />
               <span>Premium Products Suite</span>
             </motion.div>
-            <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tight" style={{ color: '#F0F9FF', textShadow: '0 2px 20px rgba(0,0,0,0.35)' }}>
+            <h1 className="text-5xl md:text-7xl font-black mb-16 tracking-tight" style={{ color: '#F0F9FF', textShadow: '0 2px 20px rgba(0,0,0,0.35)' }}>
               Digital{' '}
               <span style={{
                 background: 'linear-gradient(90deg, #7DD3FC 0%, #38BDF8 50%, #BAE6FD 100%)',
@@ -155,7 +155,7 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
                 Infrastructure
               </span>
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto font-medium leading-relaxed" style={{ color: 'rgba(224,242,254,0.92)', textShadow: '0 1px 8px rgba(0,0,0,0.25)' }}>
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto font-medium leading-loose" style={{ color: 'rgba(224,242,254,0.92)', textShadow: '0 1px 8px rgba(0,0,0,0.25)' }}>
               Comprehensive tools for managing Health, Life, General Insurance, and Mutual Funds—all in one premium unified workspace.
             </p>
           </motion.div>
@@ -173,7 +173,7 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
               Every vertical in our platform is powered by these institutional tools.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -182,9 +182,9 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
                 viewport={{ once: true }}
                 transition={{ delay: (index % 3) * 0.1 }}
               >
-                <Card className="bg-white rounded-[2.5rem] border border-slate-200 shadow-md p-4 lg:p-6 group hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-2 hover:border-blue-300 transition-all duration-500 h-full cursor-pointer">
-                  <CardHeader className="p-6 pb-2">
-                    <div className="flex items-start justify-between mb-8">
+                <Card className="bg-white rounded-[2.5rem] border border-slate-200 shadow-md p-4 lg:p-10 group hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-2 hover:border-blue-300 transition-all duration-500 h-full cursor-pointer">
+                  <CardHeader className="p-10 pb-2">
+                    <div className="flex items-start justify-between mb-16">
                       <div className="w-20 h-20 bg-slate-50 rounded-[1.5rem] flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-50 transition-all duration-500 border border-slate-100 group-hover:border-blue-100 shadow-sm">
                         <feature.icon className="h-10 w-10 text-slate-400 group-hover:text-blue-600 transition-colors" strokeWidth={1.5} />
                       </div>
@@ -194,8 +194,8 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
                     </div>
                     <CardTitle className="text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors tracking-tight">{feature.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="p-6 pt-4">
-                    <p className="text-slate-500 font-medium leading-relaxed">{feature.description}</p>
+                  <CardContent className="p-10 pt-4">
+                    <p className="text-slate-500 font-medium leading-loose">{feature.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -247,30 +247,30 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
                       <div>
                         <Badge className={`${category.lightBg} ${category.textColor} ${category.borderColor} font-black text-[10px] tracking-widest uppercase mb-6 px-4 py-1.5 shadow-sm rounded-full border`}>PRODUCT LINE</Badge>
                         <h2 className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">{category.name}</h2>
-                        <p className="text-xl text-slate-500 mt-6 max-w-3xl font-medium leading-relaxed">{category.description}</p>
+                        <p className="text-xl text-slate-500 mt-6 max-w-3xl font-medium leading-loose">{category.description}</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Plans Grid */}
-                  <div className="grid md:grid-cols-2 gap-8">
+                  <div className="grid md:grid-cols-2 gap-10">
                     {category.plans.map((plan, index) => (
                       <Card key={index} className="bg-white rounded-[2.5rem] border border-slate-200 shadow-md overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-2 hover:border-blue-300 transition-all duration-500 relative cursor-pointer">
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-slate-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <CardHeader className="p-8 lg:p-10 pb-0">
-                          <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-8">
+                        <CardHeader className="p-10 lg:p-10 pb-0">
+                          <div className="flex flex-col sm:flex-row justify-between items-start gap-12 mb-16">
                             <CardTitle className="text-2xl lg:text-3xl font-black text-slate-900 tracking-tight">{plan.name}</CardTitle>
                             <Badge className="bg-blue-50 text-blue-600 border border-blue-200 shadow-sm rounded-full px-5 py-2 font-black text-xs tracking-wide shrink-0">
                               {plan.coverage}
                             </Badge>
                           </div>
                         </CardHeader>
-                        <CardContent className="p-8 lg:p-10 pt-6">
+                        <CardContent className="p-10 lg:p-10 pt-6">
                           <ul className="space-y-6">
                             {plan.features.map((feature, fIndex) => (
-                              <li key={fIndex} className="flex items-start gap-4 group/item">
+                              <li key={fIndex} className="flex items-start gap-12 group/item">
                                 <div className={`w-2.5 h-2.5 rounded-full shrink-0 shadow-sm mt-1.5 group-hover/item:scale-125 transition-transform duration-300 ${category.bgColor}`} />
-                                <span className="text-slate-600 font-bold leading-relaxed group-hover/item:text-slate-900 transition-colors">{feature}</span>
+                                <span className="text-slate-600 font-bold leading-loose group-hover/item:text-slate-900 transition-colors">{feature}</span>
                               </li>
                             ))}
                           </ul>
@@ -282,31 +282,31 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
                   {/* Category-specific Tools */}
                   <Card className="bg-[#F8FAFC] rounded-[3rem] border border-slate-200 shadow-md overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-2 hover:border-blue-300 transition-all duration-500">
                     <CardHeader className="p-10 lg:p-12 pb-8 text-center lg:text-left border-b border-slate-200/50">
-                      <CardTitle className="text-3xl lg:text-4xl font-black flex flex-col lg:flex-row items-center gap-4 text-slate-900 tracking-tight">
+                      <CardTitle className="text-3xl lg:text-4xl font-black flex flex-col lg:flex-row items-center gap-12 text-slate-900 tracking-tight">
                         <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-slate-100 hidden lg:flex">
                            <Zap className="h-8 w-8 text-amber-500" strokeWidth={1.5} />
                         </div>
                         <Zap className="h-8 w-8 text-amber-500 lg:hidden" strokeWidth={1.5} />
                         Integrated Verticals
                       </CardTitle>
-                      <CardDescription className="text-xl font-medium text-slate-500 mt-4 leading-relaxed lg:pl-20">
+                      <CardDescription className="text-xl font-medium text-slate-500 mt-4 leading-loose lg:pl-20">
                         Streamline your {category.name.toLowerCase()} operations with our embedded infrastructure tools.
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="p-10 lg:p-12 pt-8">
-                      <div className="grid md:grid-cols-3 gap-8">
+                      <div className="grid md:grid-cols-3 gap-10">
                         {[
                           { icon: Search, title: "Comparison Engine", desc: "Native side-by-side analysis for 20+ carriers instantly." },
                           { icon: Upload, title: "KYC Onboarding", desc: "Automated Aadhaar/PAN validation triggers matching regulations." },
                           { icon: Bell, title: "Lifecycle Alerts", desc: "Rule-based renewals and claim triggers sent natively." }
                         ].map((tool, tIndex) => (
-                          <div key={tIndex} className="p-8 bg-white rounded-[2rem] border border-slate-200 shadow-sm group/tool hover:shadow-[0_15px_40px_-10px_rgba(59,130,246,0.15)] hover:-translate-y-2 hover:border-blue-300 transition-all duration-300 relative overflow-hidden cursor-pointer">
+                          <div key={tIndex} className="p-10 bg-white rounded-[2rem] border border-slate-200 shadow-sm group/tool hover:shadow-[0_15px_40px_-10px_rgba(59,130,246,0.15)] hover:-translate-y-2 hover:border-blue-300 transition-all duration-300 relative overflow-hidden cursor-pointer">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-full blur-2xl opacity-0 group-hover/tool:opacity-100 transition-opacity duration-500"></div>
                             <div className="w-16 h-16 bg-slate-50 rounded-[1.5rem] flex items-center justify-center mb-6 group-hover/tool:bg-slate-900 transition-colors duration-300 border border-slate-100 relative z-10">
                               <tool.icon className="h-8 w-8 text-slate-400 group-hover/tool:text-white transition-colors" strokeWidth={1.5} />
                             </div>
                             <h5 className="text-xl font-black text-slate-900 mb-3 group-hover/tool:text-blue-600 transition-colors tracking-tight relative z-10">{tool.title}</h5>
-                            <p className="text-base font-medium text-slate-500 leading-relaxed relative z-10">{tool.desc}</p>
+                            <p className="text-base font-medium text-slate-500 leading-loose relative z-10">{tool.desc}</p>
                           </div>
                         ))}
                       </div>
@@ -361,7 +361,7 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
               className="relative"
             >
               <Card className="bg-white relative border border-slate-200 shadow-sm overflow-hidden p-2">
-                <div className="bg-white border-0 p-8 text-center relative overflow-hidden">
+                <div className="bg-white border-0 p-10 text-center relative overflow-hidden">
                   
                   <div 
                     onClick={() => fileInputRef.current?.click()} 
@@ -371,7 +371,7 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
                   </div>
                   
                   <h3 className="text-3xl font-normal mb-6 text-blue-600 tracking-tight relative z-10">Enterprise Dropzone</h3>
-                  <p className="text-slate-600 font-medium mb-8 leading-relaxed max-w-sm mx-auto relative z-10 text-base">
+                  <p className="text-slate-600 font-medium mb-16 leading-loose max-w-sm mx-auto relative z-10 text-base">
                     Institutional-grade document ingestion. Drag PDFs, high-res images, or ZIP archives up to <span className="text-blue-500 font-bold">100MB</span> per session.
                   </p>
                   

@@ -91,7 +91,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             >
               {/* Premium badge */}
               <motion.div 
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/40 text-white text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/40 text-white text-xs font-bold uppercase tracking-widest mb-16 backdrop-blur-md"
                 initial={{ opacity: 0, y: -20, scale: 0.8 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
@@ -143,7 +143,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
               {/* Enhanced subheading */}
               <motion.p 
-                className="text-lg md:text-xl mb-12 leading-relaxed max-w-2xl font-medium"
+                className="text-lg md:text-xl mb-16 leading-loose max-w-2xl font-medium"
                 style={{ color: 'rgba(224, 242, 254, 0.92)', textShadow: '0 1px 8px rgba(0,0,0,0.25)' }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -154,7 +154,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
               {/* CTA Buttons — pill-shaped, generously spaced */}
               <motion.div 
-                className="flex flex-col sm:flex-row items-center gap-4 pt-10"
+                className="flex flex-col sm:flex-row items-center gap-12 pt-10"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
@@ -296,7 +296,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 transition={{ delay: 0.8, duration: 0.8 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-12">
                   <motion.div 
                     className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white font-bold shadow-lg"
                     animate={{ rotate: [0, 10, -10, 0] }}
@@ -319,7 +319,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 transition={{ delay: 1, duration: 0.8 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-12">
                   <motion.div 
                     className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold shadow-lg"
                     animate={{ scale: [1, 1.1, 1] }}
@@ -342,7 +342,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 transition={{ delay: 1.2, duration: 0.8 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-12">
                   <motion.div 
                     className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold shadow-lg"
                     animate={{ y: [0, -5, 0] }}
@@ -389,7 +389,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     <CardTitle className="text-xl font-bold text-slate-900">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-600 font-medium leading-relaxed">
+                    <p className="text-slate-600 font-medium leading-loose">
                       {item.desc}
                     </p>
                   </CardContent>
@@ -416,7 +416,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             {features.map((feature, index) => (
               <motion.div 
                 key={index} 
-                className="flex gap-6 items-start"
+                className="flex gap-10 items-start"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -429,7 +429,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
-                  <p className="text-slate-600 font-medium leading-relaxed">{feature.description}</p>
+                  <p className="text-slate-600 font-medium leading-loose">{feature.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -457,7 +457,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   "Indian Payment Gateway Support",
                   "Vernacular Language Content Generation"
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4">
+                  <div key={i} className="flex items-center gap-12">
                     <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white">
                       <CheckCircle className="size-4" />
                     </div>
@@ -505,7 +505,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     <CardDescription className="text-blue-600 font-bold text-xs uppercase tracking-wider">{testimonial.role}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-600 font-medium italic leading-relaxed text-lg">"{testimonial.quote}"</p>
+                    <p className="text-slate-600 font-medium italic leading-loose text-lg">"{testimonial.quote}"</p>
                   </CardContent>
                 </Card>
               </motion.div>

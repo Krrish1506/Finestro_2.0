@@ -71,7 +71,7 @@ export function ContactPage({ onNavigate }: { onNavigate: (page: string) => void
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           >
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/40 text-white text-[10px] font-black uppercase tracking-widest mb-8 backdrop-blur-md"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/40 text-white text-[10px] font-black uppercase tracking-widest mb-16 backdrop-blur-md"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -79,7 +79,7 @@ export function ContactPage({ onNavigate }: { onNavigate: (page: string) => void
               <Sparkles className="size-4" />
               <span>Support Excellence</span>
             </motion.div>
-            <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tight" style={{ color: '#F0F9FF', textShadow: '0 2px 20px rgba(0,0,0,0.35)' }}>
+            <h1 className="text-5xl md:text-7xl font-black mb-16 tracking-tight" style={{ color: '#F0F9FF', textShadow: '0 2px 20px rgba(0,0,0,0.35)' }}>
               Get in{' '}
               <span style={{
                 background: 'linear-gradient(90deg, #7DD3FC 0%, #38BDF8 50%, #BAE6FD 100%)',
@@ -91,7 +91,7 @@ export function ContactPage({ onNavigate }: { onNavigate: (page: string) => void
                 Touch
               </span>
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto font-medium leading-relaxed" style={{ color: 'rgba(224,242,254,0.92)', textShadow: '0 1px 8px rgba(0,0,0,0.25)' }}>
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto font-medium leading-loose" style={{ color: 'rgba(224,242,254,0.92)', textShadow: '0 1px 8px rgba(0,0,0,0.25)' }}>
               Have questions about our enterprise infrastructure? Our team of fintech experts is ready to help you scale.
             </p>
           </motion.div>
@@ -101,7 +101,7 @@ export function ContactPage({ onNavigate }: { onNavigate: (page: string) => void
       {/* Contact Methods */}
       <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {contactMethods.map((method, index) => (
               <motion.div
                 key={index}
@@ -110,17 +110,17 @@ export function ContactPage({ onNavigate }: { onNavigate: (page: string) => void
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="bg-white text-center rounded-[2.5rem] border border-slate-200 shadow-sm p-4 group hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-500/15 hover:border-blue-200 transition-all duration-500 cursor-pointer h-full">
-                  <CardHeader className="p-6 pb-2">
+                  <CardHeader className="p-10 pb-2">
                     <div className="w-20 h-20 bg-slate-50 rounded-[1.5rem] flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:bg-blue-50 group-hover:scale-110 transition-all duration-500 border border-slate-100 group-hover:border-blue-100">
                       <method.icon className="h-10 w-10 text-slate-400 group-hover:text-blue-600 transition-colors" strokeWidth={1.5} />
                     </div>
                     <CardTitle className="text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors tracking-tight">{method.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="p-6 pt-4">
+                  <CardContent className="p-10 pt-4">
                     <a href={method.link} className="text-blue-600 font-black mb-4 block text-lg tracking-tight hover:underline underline-offset-4">
                       {method.value}
                     </a>
-                    <p className="text-slate-500 font-medium leading-relaxed">{method.description}</p>
+                    <p className="text-slate-500 font-medium leading-loose">{method.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -144,14 +144,14 @@ export function ContactPage({ onNavigate }: { onNavigate: (page: string) => void
                 GET STARTED
               </div>
               <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">Send Us a Message</h2>
-              <p className="text-xl text-slate-500 mb-12 font-medium leading-relaxed">
+              <p className="text-xl text-slate-500 mb-16 font-medium leading-loose">
                 Fill out the form below and our partnership division will reach out within one business cycle.
               </p>
-              <Card className="bg-white rounded-[3rem] border border-slate-200 shadow-ambient-lg p-6 lg:p-10 overflow-hidden relative">
+              <Card className="bg-white rounded-[3rem] border border-slate-200 shadow-ambient-lg p-10 lg:p-10 overflow-hidden relative">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[80px] rounded-full pointer-events-none"></div>
                 <CardContent className="p-0 relative z-10">
                   <form className="space-y-8">
-                    <div className="grid sm:grid-cols-2 gap-8">
+                    <div className="grid sm:grid-cols-2 gap-10">
                       <div className="space-y-4">
                         <Label htmlFor="firstName" className="font-black text-sm text-slate-700 uppercase tracking-widest">First Name</Label>
                         <Input id="firstName" placeholder="Vikram" className="rounded-2xl border-slate-200 bg-slate-50 hover:bg-white hover:border-blue-300 focus:border-blue-500 focus:ring-blue-500/20 h-14 text-lg transition-all shadow-sm" required />
@@ -214,20 +214,20 @@ export function ContactPage({ onNavigate }: { onNavigate: (page: string) => void
                 viewport={{ once: true }}
                 className="pt-16 lg:pt-0"
               >
-                <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-12 tracking-tight">Why Partner with Us?</h2>
+                <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-16 tracking-tight">Why Partner with Us?</h2>
                 <div className="space-y-10">
                   {[
                     { icon: Clock, title: "24/7 Redundant Systems", desc: "Our tech support never sleeps. We ensure 99.9% uptime for your agent portal." },
                     { icon: Globe, title: "Pan-India Coverage", desc: "Native support for operations in 22 regional languages." },
                     { icon: Sparkles, title: "Next-Gen Infrastructure", desc: "Built on a secure dark-mesh architecture for ultimate data isolation." }
                   ].map((item, i) => (
-                    <div key={i} className="flex gap-6 items-start group">
+                    <div key={i} className="flex gap-10 items-start group">
                       <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-[1.5rem] flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 group-hover:shadow-ambient group-hover:border-blue-600 transition-all duration-300">
                         <item.icon className="size-7 text-slate-400 group-hover:text-white transition-colors" />
                       </div>
                       <div>
                         <h3 className="text-xl font-black text-slate-900 mb-3 group-hover:text-blue-600 transition-colors tracking-tight">{item.title}</h3>
-                        <p className="text-slate-500 font-medium leading-relaxed text-lg">{item.desc}</p>
+                        <p className="text-slate-500 font-medium leading-loose text-lg">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -241,8 +241,8 @@ export function ContactPage({ onNavigate }: { onNavigate: (page: string) => void
                 viewport={{ once: true }}
               >
                 <Card className="bg-slate-50 rounded-[3rem] border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-500/15 hover:border-blue-200 transition-all duration-500">
-                  <CardHeader className="p-8 pb-6 border-b border-slate-200/50">
-                    <div className="flex items-center gap-6">
+                  <CardHeader className="p-10 pb-6 border-b border-slate-200/50">
+                    <div className="flex items-center gap-10">
                       <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-slate-100">
                         <CreditCard className="size-8 text-blue-600" />
                       </div>
@@ -252,12 +252,12 @@ export function ContactPage({ onNavigate }: { onNavigate: (page: string) => void
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent className="p-8 pt-6">
-                    <div className="grid grid-cols-2 gap-4">
+                  <CardContent className="p-10 pt-6">
+                    <div className="grid grid-cols-2 gap-12">
                       {paymentMethods.map((method, index) => (
                         <div
                           key={index}
-                          className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm"
+                          className="flex items-center gap-12 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm"
                         >
                           <div className="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-[12px] font-black shrink-0">
                             ✓

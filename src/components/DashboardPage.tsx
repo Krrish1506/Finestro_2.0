@@ -348,7 +348,7 @@ export function DashboardPage() {
         </div>
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, ease: [0.4,0,0.2,1] }}>
               {/* Badge */}
               <motion.div
@@ -451,13 +451,13 @@ export function DashboardPage() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {stats.map((stat, i) => (
             <motion.div key={i} whileHover={{ y: -5 }} className="group" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 * i }}>
-              <div className="relative rounded-2xl overflow-hidden border border-slate-200/70 shadow-sm hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-1 transition-all duration-300 bg-white p-6 group-hover:border-blue-200">
+              <div className="relative rounded-2xl overflow-hidden border border-slate-200/70 shadow-sm hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-1 transition-all duration-300 bg-white p-10 group-hover:border-blue-200">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-[10px] font-black text-slate-600 uppercase tracking-widest">{stat.title}</span>
                   <div className={`w-10 h-10 ${stat.bgColor} rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}>
@@ -502,9 +502,9 @@ export function DashboardPage() {
 
             {/* Clients Tab */}
             <TabsContent value="clients" className="space-y-8 outline-none">
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-8">
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-10">
                 <Card className="rounded-2xl border border-slate-200/50 shadow-ambient-lg overflow-hidden bg-white">
-                  <CardHeader className="p-8 lg:p-10 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-6 bg-slate-50/50">
+                  <CardHeader className="p-10 lg:p-10 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-10 bg-slate-50/50">
                     <div>
                       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-black uppercase tracking-widest mb-4">
                         <Users className="size-3" />
@@ -529,7 +529,7 @@ export function DashboardPage() {
                             <Label className="text-xs font-black uppercase tracking-widest text-slate-600">Legal Name</Label>
                             <Input name="clientName" placeholder="Rahul Sharma" required className="rounded-2xl h-14 bg-slate-50 border-slate-200 text-lg" />
                           </div>
-                          <div className="grid grid-cols-2 gap-6">
+                          <div className="grid grid-cols-2 gap-10">
                             <div className="space-y-3">
                               <Label className="text-xs font-black uppercase tracking-widest text-slate-600">Email Address</Label>
                               <Input name="clientEmail" type="email" placeholder="rahul@domain.com" required className="rounded-2xl h-14 bg-slate-50 border-slate-200" />
@@ -545,7 +545,7 @@ export function DashboardPage() {
                     </Dialog>
                   </CardHeader>
                   <CardContent className="p-0">
-                    <div className="p-8 bg-white border-b border-slate-100">
+                    <div className="p-10 bg-white border-b border-slate-100">
                       <div className="relative max-w-xl">
                         <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-600" strokeWidth={2} />
                         <Input
@@ -611,10 +611,10 @@ export function DashboardPage() {
 
             {/* Claims Tab */}
             <TabsContent value="claims" className="space-y-8 outline-none">
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
                 {claims.map((claim) => (
                   <Card key={claim.id} className="rounded-2xl border border-slate-200/50 shadow-sm overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-1 hover:border-blue-200 transition-all duration-300 bg-white">
-                    <CardHeader className="p-8">
+                    <CardHeader className="p-10">
                       <div className="flex justify-between items-start mb-6">
                         <Badge variant="outline" className="text-[10px] font-black tracking-widest uppercase bg-slate-50 border-slate-200 text-slate-600 rounded-full px-3">{claim.id}</Badge>
                         <Badge className="text-[10px] font-black tracking-widest uppercase bg-blue-50 text-blue-600 border border-blue-100 rounded-full px-3">{claim.stage}</Badge>
@@ -622,7 +622,7 @@ export function DashboardPage() {
                       <CardTitle className="text-2xl font-black tracking-tight text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">{claim.client}</CardTitle>
                       <CardDescription className="font-bold text-xs uppercase tracking-widest text-slate-600">{claim.type} • {claim.date}</CardDescription>
                     </CardHeader>
-                    <CardContent className="p-8 pt-0 space-y-8">
+                    <CardContent className="p-10 pt-0 space-y-8">
                       <div className="space-y-3">
                         <div className="flex justify-between text-[10px] font-black tracking-widest uppercase text-slate-600">
                           <span>Settlement Progress</span>
@@ -685,9 +685,9 @@ export function DashboardPage() {
 
             {/* Documents Tab */}
             <TabsContent value="documents" className="space-y-8 outline-none">
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-8">
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-10">
                 <Card className="rounded-2xl border border-slate-200/50 shadow-ambient-lg overflow-hidden bg-white">
-                  <CardHeader className="p-8 lg:p-10 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-6 bg-slate-50/50">
+                  <CardHeader className="p-10 lg:p-10 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-10 bg-slate-50/50">
                     <div>
                       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-black uppercase tracking-widest mb-4">
                         <Upload className="size-3" />
@@ -725,11 +725,11 @@ export function DashboardPage() {
                       </DialogContent>
                     </Dialog>
                   </CardHeader>
-                  <CardContent className="p-8 lg:p-10">
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  <CardContent className="p-10 lg:p-10">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
                       {uploadedFiles.map((file) => (
                         <Card key={file.id} className="rounded-2xl border border-slate-200/70 shadow-sm hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-1 transition-all duration-300 group overflow-hidden bg-white hover:border-blue-200">
-                          <CardContent className="p-8">
+                          <CardContent className="p-10">
                             <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all"><FileText className="h-7 w-7" strokeWidth={1.5} /></div>
                             <div className="space-y-1.5">
                               <h4 className="font-bold text-slate-900 truncate tracking-tight text-lg">{file.name}</h4>
@@ -751,9 +751,9 @@ export function DashboardPage() {
 
             {/* Reminders Tab */}
             <TabsContent value="reminders" className="space-y-8 outline-none">
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-8">
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-10">
                 <Card className="rounded-2xl border border-slate-200/50 shadow-ambient-lg overflow-hidden bg-white">
-                  <CardHeader className="p-8 lg:p-10 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-6 bg-slate-50/50">
+                  <CardHeader className="p-10 lg:p-10 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-10 bg-slate-50/50">
                     <div>
                       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-black uppercase tracking-widest mb-4">
                         <Bell className="size-3" />
@@ -778,7 +778,7 @@ export function DashboardPage() {
                               </SelectContent>
                             </Select>
                           </div>
-                          <div className="grid grid-cols-2 gap-6">
+                          <div className="grid grid-cols-2 gap-10">
                             <div className="space-y-3">
                               <Label className="text-xs font-black uppercase tracking-widest text-slate-600">Event Date</Label>
                               <Input type="date" value={reminderFormData.date} onChange={(e) => setReminderFormData(f => ({...f, date: e.target.value}))} className="rounded-2xl h-14 border-slate-200 text-lg" required />
@@ -804,14 +804,14 @@ export function DashboardPage() {
                       </DialogContent>
                     </Dialog>
                   </CardHeader>
-                  <CardContent className="p-8 lg:p-10">
+                  <CardContent className="p-10 lg:p-10">
                     <div className="space-y-4">
                       {reminders.length === 0 ? (
-                        <div className="text-center py-16 text-slate-600 font-bold text-lg">No active lifecycle alerts found.</div>
+                        <div className="text-center py-24 text-slate-600 font-bold text-lg">No active lifecycle alerts found.</div>
                       ) : (
                         reminders.map((reminder) => (
-                          <div key={reminder.id} className={`flex items-center justify-between p-6 sm:p-8 rounded-2xl border transition-all duration-300 ${reminder.completed ? 'opacity-50 grayscale bg-slate-50 border-slate-100 text-slate-600' : 'bg-white border-slate-200/70 shadow-sm hover:shadow-ambient hover:border-blue-200 text-slate-900 group'}`}>
-                            <div className="flex items-center gap-6 flex-1">
+                          <div key={reminder.id} className={`flex items-center justify-between p-10 sm:p-10 rounded-2xl border transition-all duration-300 ${reminder.completed ? 'opacity-50 grayscale bg-slate-50 border-slate-100 text-slate-600' : 'bg-white border-slate-200/70 shadow-sm hover:shadow-ambient hover:border-blue-200 text-slate-900 group'}`}>
+                            <div className="flex items-center gap-10 flex-1">
                               <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ${reminder.completed ? 'bg-slate-100 text-slate-600' : 'bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white'}`}>
                                 <Calendar className="h-7 w-7" strokeWidth={1.5} />
                               </div>
@@ -823,7 +823,7 @@ export function DashboardPage() {
                                 <p className="text-sm font-black text-slate-600 uppercase tracking-widest">{reminder.clientName}</p>
                               </div>
                             </div>
-                            <div className="flex items-center gap-6 sm:gap-10">
+                            <div className="flex items-center gap-10 sm:gap-10">
                               <Badge className={`uppercase tracking-widest text-[10px] font-black px-3 py-1 rounded-full ${reminder.priority === 'High' ? 'bg-red-50 text-red-600 border border-red-200' : reminder.priority === 'Medium' ? 'bg-amber-50 text-amber-600 border border-amber-200' : 'bg-slate-100 text-slate-600 border border-slate-200'}`}>{reminder.priority}</Badge>
                               <span className="text-sm font-black text-slate-600 tracking-tight hidden sm:block">{new Date(reminder.date).toLocaleDateString()}</span>
                               <div className="flex gap-2">
@@ -844,10 +844,10 @@ export function DashboardPage() {
 
             {/* Reports Tab */}
             <TabsContent value="reports" className="space-y-8 outline-none">
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-8">
-                <div className="grid md:grid-cols-2 gap-8">
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-10">
+                <div className="grid md:grid-cols-2 gap-10">
                   <Card className="rounded-2xl border border-slate-200/50 shadow-ambient-lg p-10 bg-white group">
-                    <CardHeader className="p-0 mb-8"><CardTitle className="text-2xl font-black text-slate-900 uppercase tracking-tight group-hover:text-blue-600 transition-colors">Revenue Matrix</CardTitle></CardHeader>
+                    <CardHeader className="p-0 mb-16"><CardTitle className="text-2xl font-black text-slate-900 uppercase tracking-tight group-hover:text-blue-600 transition-colors">Revenue Matrix</CardTitle></CardHeader>
                     <div className="h-[300px]">
                       <ResponsiveContainer width="100%" height="100%">
                         <BarChart data={salesData}><CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" /><XAxis dataKey="month" axisLine={false} tickLine={false} tick={{fontSize: 12, fill: '#94a3b8', fontWeight: 900}} /><YAxis hide /><RechartsTooltip cursor={{fill: '#f8fafc'}} contentStyle={{borderRadius: '1.5rem', border: '1px solid #e2e8f0', boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)', padding: '16px', fontWeight: 'bold'}} /><Bar dataKey="achieved" fill="#2563eb" radius={[6, 6, 0, 0]} barSize={40} /></BarChart>
@@ -855,7 +855,7 @@ export function DashboardPage() {
                     </div>
                   </Card>
                   <Card className="rounded-2xl border border-slate-200/50 shadow-ambient-lg p-10 bg-white group">
-                    <CardHeader className="p-0 mb-8"><CardTitle className="text-2xl font-black text-slate-900 uppercase tracking-tight group-hover:text-blue-600 transition-colors">Growth Velocity</CardTitle></CardHeader>
+                    <CardHeader className="p-0 mb-16"><CardTitle className="text-2xl font-black text-slate-900 uppercase tracking-tight group-hover:text-blue-600 transition-colors">Growth Velocity</CardTitle></CardHeader>
                     <div className="h-[300px]">
                       <ResponsiveContainer width="100%" height="100%">
                         <LineChart data={salesData}><CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" /><XAxis dataKey="month" hide /><YAxis hide /><RechartsTooltip cursor={{stroke: '#e2e8f0', strokeWidth: 2, strokeDasharray: '4 4'}} contentStyle={{borderRadius: '1.5rem', border: '1px solid #e2e8f0', padding: '16px', fontWeight: 'bold', boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1)'}} /><Line type="monotone" dataKey="achieved" stroke="#2563eb" strokeWidth={4} dot={{r: 6, fill: '#2563eb', strokeWidth: 3, stroke: '#fff'}} activeDot={{r: 8, strokeWidth: 4}} /></LineChart>
@@ -870,7 +870,7 @@ export function DashboardPage() {
             <TabsContent value="marketing" className="space-y-8 outline-none">
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
                 <Card className="rounded-2xl border border-slate-200/50 shadow-ambient-lg overflow-hidden bg-white">
-                  <CardHeader className="p-8 lg:p-12 relative overflow-hidden bg-slate-50">
+                  <CardHeader className="p-10 lg:p-12 relative overflow-hidden bg-slate-50">
                     <div className="absolute inset-0 pointer-events-none opacity-40">
                       <div className="absolute -top-10 -right-10 w-96 h-96 bg-blue-500 shrink-0 blur-[100px] rounded-full" />
                     </div>
@@ -883,7 +883,7 @@ export function DashboardPage() {
                       <CardDescription className="text-slate-600 font-medium text-lg">Generate premium institutional collateral</CardDescription>
                     </div>
                   </CardHeader>
-                  <CardContent className="p-8 lg:p-12 grid md:grid-cols-2 gap-12 bg-slate-50/50">
+                  <CardContent className="p-10 lg:p-12 grid md:grid-cols-2 gap-12 bg-slate-50/50">
                     <div className="space-y-8">
                       <div>
                         <Label className="text-xs font-black uppercase tracking-widest text-slate-600 block mb-6">Distribution Platforms</Label>
@@ -908,7 +908,7 @@ export function DashboardPage() {
                         <Sparkles className="h-10 w-10 animate-pulse" strokeWidth={1.5} />
                       </div>
                       <h4 className="text-2xl font-black text-slate-900 mb-3 tracking-tight">Creative Direction</h4>
-                      <p className="text-lg text-slate-600 max-w-sm mb-8 font-medium">Select a campaign theme to generate AI-driven institutional assets and copy.</p>
+                      <p className="text-lg text-slate-600 max-w-sm mb-16 font-medium">Select a campaign theme to generate AI-driven institutional assets and copy.</p>
                       <Button className="rounded-2xl h-14 px-10 shadow-ambient bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg transition-all hover:scale-105">Activate AURA™ AI</Button>
                     </div>
                   </CardContent>
