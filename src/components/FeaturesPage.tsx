@@ -215,7 +215,7 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
                 viewport={{ once: true }}
                 transition={{ delay: (index % 2) * 0.1 }}
               >
-                <Card className="glass relative rounded-[2.5rem] border border-slate-200/50 shadow-sm p-4 lg:p-6 group hover:shadow-ambient-lg hover:border-blue-200 transition-all duration-500 h-full bg-white">
+                <Card className="glass relative rounded-[2.5rem] border border-slate-200/50 shadow-sm p-4 lg:p-6 group hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-500/15 hover:border-blue-200 transition-all duration-500 h-full bg-white">
                   <CardHeader className="p-6 lg:p-8 pb-4">
                     <div className="flex items-start justify-between mb-8">
                       <div className={`w-20 h-20 ${feature.bgColor} rounded-3xl flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-500`}>
@@ -269,7 +269,7 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
                 transition={{ delay: index * 0.1 }}
                 className="h-full"
               >
-                <Card className="bg-white rounded-[3rem] border border-slate-200 shadow-sm p-4 lg:p-6 h-full relative group overflow-hidden hover:shadow-ambient-lg transition-all duration-500">
+                <Card className="bg-white rounded-[3rem] border border-slate-200 shadow-sm p-4 lg:p-6 h-full relative group overflow-hidden hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-500/15 transition-all duration-500">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full blur-3xl group-hover:bg-blue-100 group-hover:scale-150 transition-all duration-500"></div>
                   <CardHeader className="pb-8 p-6 lg:p-8 relative z-10">
                     <CardTitle className="text-2xl font-black text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">{useCase.title}</CardTitle>
@@ -379,7 +379,7 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
                   </CardHeader>
                   <CardContent className="px-0 space-y-4">
                     <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-                      <div className="p-10 lg:p-12 bg-slate-900 text-white rounded-[2.5rem] relative overflow-hidden group shadow-xl">
+                      <div className="p-10 lg:p-12 bg-[#0F172A] text-white rounded-[2.5rem] relative overflow-hidden group shadow-xl">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-[80px] rounded-full group-hover:bg-blue-500/30 transition-colors"></div>
                         <Shield className="h-14 w-14 text-blue-400 mb-10 relative z-10" />
                         <h4 className="text-3xl font-black mb-8 tracking-tight relative z-10">Data Fortification</h4>
@@ -473,15 +473,15 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
       </section>
 
       {/* CTA */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white relative overflow-hidden">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-slate-50">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/20 blur-[120px] rounded-full"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/10 blur-[120px] rounded-full"></div>
         </div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight leading-[1.1]">
-            Ready to Upgrade Your <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Operations?</span>
+          <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight leading-[1.1] text-slate-900">
+            Ready to Upgrade Your <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Operations?</span>
           </h2>
-          <p className="text-xl md:text-2xl mb-12 text-slate-300 font-medium leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl mb-12 text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto">
             Deploy the Finestro core into your agency in under 10 minutes. No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">

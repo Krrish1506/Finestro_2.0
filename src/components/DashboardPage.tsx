@@ -457,7 +457,7 @@ export function DashboardPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {stats.map((stat, i) => (
             <motion.div key={i} whileHover={{ y: -5 }} className="group" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 * i }}>
-              <div className="relative rounded-2xl overflow-hidden border border-slate-200/70 shadow-sm hover:shadow-lg transition-all bg-white p-6 group-hover:border-blue-200">
+              <div className="relative rounded-2xl overflow-hidden border border-slate-200/70 shadow-sm hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-1 transition-all duration-300 bg-white p-6 group-hover:border-blue-200">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-[10px] font-black text-slate-600 uppercase tracking-widest">{stat.title}</span>
                   <div className={`w-10 h-10 ${stat.bgColor} rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}>
@@ -613,7 +613,7 @@ export function DashboardPage() {
             <TabsContent value="claims" className="space-y-8 outline-none">
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {claims.map((claim) => (
-                  <Card key={claim.id} className="rounded-2xl border border-slate-200/50 shadow-ambient overflow-hidden group hover:shadow-ambient-lg hover:border-blue-200 transition-all duration-300 bg-white">
+                  <Card key={claim.id} className="rounded-2xl border border-slate-200/50 shadow-sm overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-1 hover:border-blue-200 transition-all duration-300 bg-white">
                     <CardHeader className="p-8">
                       <div className="flex justify-between items-start mb-6">
                         <Badge variant="outline" className="text-[10px] font-black tracking-widest uppercase bg-slate-50 border-slate-200 text-slate-600 rounded-full px-3">{claim.id}</Badge>
@@ -728,7 +728,7 @@ export function DashboardPage() {
                   <CardContent className="p-8 lg:p-10">
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                       {uploadedFiles.map((file) => (
-                        <Card key={file.id} className="rounded-2xl border border-slate-200/70 shadow-sm hover:shadow-ambient transition-all duration-300 group overflow-hidden bg-white hover:border-blue-200">
+                        <Card key={file.id} className="rounded-2xl border border-slate-200/70 shadow-sm hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-1 transition-all duration-300 group overflow-hidden bg-white hover:border-blue-200">
                           <CardContent className="p-8">
                             <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all"><FileText className="h-7 w-7" strokeWidth={1.5} /></div>
                             <div className="space-y-1.5">
@@ -870,17 +870,17 @@ export function DashboardPage() {
             <TabsContent value="marketing" className="space-y-8 outline-none">
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
                 <Card className="rounded-2xl border border-slate-200/50 shadow-ambient-lg overflow-hidden bg-white">
-                  <CardHeader className="p-8 lg:p-12 relative overflow-hidden bg-slate-900 text-white">
-                    <div className="absolute inset-0 pointer-events-none opacity-20">
-                      <div className="absolute -top-10 -right-10 w-96 h-96 bg-blue-500 rounded-full blur-[100px]" />
+                  <CardHeader className="p-8 lg:p-12 relative overflow-hidden bg-slate-50">
+                    <div className="absolute inset-0 pointer-events-none opacity-40">
+                      <div className="absolute -top-10 -right-10 w-96 h-96 bg-blue-500 shrink-0 blur-[100px] rounded-full" />
                     </div>
                     <div className="relative z-10 w-full mb-4">
-                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-blue-300 text-[10px] font-black uppercase tracking-widest backdrop-blur-md mb-6">
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-black uppercase tracking-widest backdrop-blur-md mb-6">
                         <Sparkles className="size-3" />
                         <span>AURA™ AI Engine</span>
                       </div>
-                      <CardTitle className="text-4xl font-black uppercase tracking-tight mb-2">Brand Acceleration</CardTitle>
-                      <CardDescription className="text-slate-400 font-medium text-lg">Generate premium institutional collateral</CardDescription>
+                      <CardTitle className="text-4xl font-black uppercase tracking-tight mb-2 text-slate-900">Brand Acceleration</CardTitle>
+                      <CardDescription className="text-slate-600 font-medium text-lg">Generate premium institutional collateral</CardDescription>
                     </div>
                   </CardHeader>
                   <CardContent className="p-8 lg:p-12 grid md:grid-cols-2 gap-12 bg-slate-50/50">

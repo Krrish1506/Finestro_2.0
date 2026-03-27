@@ -109,7 +109,7 @@ export function ContactPage({ onNavigate }: { onNavigate: (page: string) => void
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="bg-white text-center rounded-[2.5rem] border border-slate-200 shadow-sm p-4 group hover:shadow-ambient-lg hover:-translate-y-2 hover:border-blue-200 transition-all duration-500 cursor-pointer h-full">
+                <Card className="bg-white text-center rounded-[2.5rem] border border-slate-200 shadow-sm p-4 group hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-500/15 hover:border-blue-200 transition-all duration-500 cursor-pointer h-full">
                   <CardHeader className="p-6 pb-2">
                     <div className="w-20 h-20 bg-slate-50 rounded-[1.5rem] flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:bg-blue-50 group-hover:scale-110 transition-all duration-500 border border-slate-100 group-hover:border-blue-100">
                       <method.icon className="h-10 w-10 text-slate-400 group-hover:text-blue-600 transition-colors" strokeWidth={1.5} />
@@ -240,7 +240,7 @@ export function ContactPage({ onNavigate }: { onNavigate: (page: string) => void
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <Card className="bg-slate-50 rounded-[3rem] border border-slate-200 shadow-sm hover:shadow-ambient hover:border-blue-200 transition-all duration-300">
+                <Card className="bg-slate-50 rounded-[3rem] border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-500/15 hover:border-blue-200 transition-all duration-500">
                   <CardHeader className="p-8 pb-6 border-b border-slate-200/50">
                     <div className="flex items-center gap-6">
                       <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-slate-100">
@@ -276,7 +276,7 @@ export function ContactPage({ onNavigate }: { onNavigate: (page: string) => void
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-slate-50 rounded-[3rem] h-72 border border-slate-200 shadow-sm overflow-hidden relative group cursor-pointer hover:shadow-ambient-lg transition-all duration-500">
+                <div className="bg-slate-50 rounded-[3rem] h-72 border border-slate-200 shadow-sm overflow-hidden relative group cursor-pointer hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-500/15 transition-all duration-500">
                   <div className="absolute inset-0 bg-slate-200 animate-pulse group-hover:hidden transition-all"></div>
                   <div className="absolute inset-0 flex items-center justify-center bg-blue-50/50 group-hover:bg-blue-50 transition-colors duration-500 backdrop-blur-sm z-10">
                     <div className="text-center group-hover:scale-110 transition-transform duration-500">

@@ -170,7 +170,7 @@ export function SecurityPage({ onNavigate }: { onNavigate: (page: string) => voi
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="rounded-[2.5rem] border border-slate-200/50 shadow-sm p-4 lg:p-6 group hover:shadow-ambient-lg hover:border-blue-200 transition-all duration-500 h-full bg-white">
+                <Card className="rounded-[2.5rem] border border-slate-200/50 shadow-sm p-4 lg:p-6 group hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-2 hover:border-blue-200 transition-all duration-500 h-full bg-white">
                   <CardHeader className="p-6 pb-2">
                     <div className="w-20 h-20 bg-slate-50 rounded-[1.5rem] flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 group-hover:bg-blue-50 transition-all duration-500 border border-slate-100 group-hover:border-blue-100">
                       <feature.icon className="h-10 w-10 text-slate-400 group-hover:text-blue-600 transition-colors" strokeWidth={1.5} />
@@ -206,7 +206,7 @@ export function SecurityPage({ onNavigate }: { onNavigate: (page: string) => voi
                 transition={{ delay: index * 0.1 }}
                 className="h-full"
               >
-                <Card className="glass relative rounded-[2.5rem] border border-slate-200/50 shadow-sm p-4 h-full bg-slate-50 hover:bg-white hover:shadow-ambient hover:border-blue-200 transition-all duration-300">
+                <Card className="glass relative rounded-[2.5rem] border border-slate-200/50 shadow-sm p-4 h-full bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-2 hover:border-blue-200 transition-all duration-500">
                   <CardHeader className="p-6 lg:p-8">
                     <div className="flex items-start justify-between mb-6">
                       <CardTitle className="text-xl font-black text-slate-900 tracking-tight pr-4">{standard.name}</CardTitle>
@@ -286,7 +286,7 @@ export function SecurityPage({ onNavigate }: { onNavigate: (page: string) => voi
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className={`bg-white rounded-[2.5rem] border border-slate-200 shadow-sm hover:shadow-ambient-lg h-full overflow-hidden transition-all duration-500 group relative`}>
+                <Card className={`bg-white rounded-[2.5rem] border border-slate-200 shadow-sm hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-2 h-full overflow-hidden transition-all duration-500 group relative`}>
                   <div className={`absolute top-0 left-0 w-full h-2 ${control.color.replace('border-', 'bg-')}`}></div>
                   <CardHeader className="bg-slate-50 border-b border-slate-100 p-8 lg:p-10 relative">
                     <div className="absolute top-8 right-8 w-16 h-16 bg-blue-500/5 rounded-full blur-xl group-hover:scale-150 transition-all duration-500"></div>
@@ -380,7 +380,7 @@ export function SecurityPage({ onNavigate }: { onNavigate: (page: string) => voi
       </section>
 
       {/* Trust & Transparency */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white relative overflow-hidden">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#0F172A] text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-indigo-900/20 to-transparent"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="max-w-5xl mx-auto text-center relative z-10">

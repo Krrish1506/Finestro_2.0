@@ -125,7 +125,7 @@ export function AboutPage({ onNavigate }: { onNavigate: (page: string) => void }
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <Card className="rounded-[2.5rem] border border-slate-200/50 shadow-ambient-lg p-8 lg:p-12 h-full bg-white group hover:shadow-floating hover:border-blue-200 transition-all duration-500">
+                <Card className="rounded-[2.5rem] border border-slate-200/50 shadow-ambient-lg p-8 lg:p-12 h-full bg-white group hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-500/15 hover:border-blue-200 transition-all duration-500">
                   <CardHeader className="p-0 mb-8">
                     <div className="w-20 h-20 bg-blue-50 text-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
                       <item.icon className="h-10 w-10" strokeWidth={1.5} />
@@ -208,7 +208,7 @@ export function AboutPage({ onNavigate }: { onNavigate: (page: string) => void }
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="rounded-[2.5rem] border border-slate-200/50 shadow-sm h-full group hover:shadow-ambient-lg hover:border-blue-200 hover:-translate-y-2 transition-all duration-500 bg-white">
+                <Card className="rounded-[2.5rem] border border-slate-200/50 shadow-sm h-full group hover:shadow-2xl hover:border-blue-200 hover:-translate-y-2 hover:shadow-blue-500/15 transition-all duration-500 bg-white">
                   <CardHeader className="p-8 lg:p-10 pb-6 border-b border-slate-50">
                     <div className="w-20 h-20 rounded-full bg-slate-100 mb-6 flex items-center justify-center text-slate-400 font-black text-2xl group-hover:bg-blue-50 group-hover:text-blue-600 transition-colors">
                       {member.name.charAt(0)}
@@ -227,16 +227,16 @@ export function AboutPage({ onNavigate }: { onNavigate: (page: string) => void }
       </section>
 
       {/* Success Stories */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-slate-900 text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.15)_0%,transparent_70%)] pointer-events-none" />
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-slate-50">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.05)_0%,transparent_70%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-blue-300 text-[10px] font-black uppercase tracking-widest backdrop-blur-md mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-black uppercase tracking-widest backdrop-blur-md mb-6">
               <Award className="size-3" />
               <span>Proven Results</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">Agent Success Stories</h2>
-            <p className="text-xl text-slate-400 font-medium max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-black text-blue-900 mb-6 tracking-tight">Agent Success Stories</h2>
+            <p className="text-xl text-blue-700/80 font-medium max-w-2xl mx-auto">
               Real results from modern agents scaling their advisory businesses across India.
             </p>
           </div>
@@ -250,14 +250,14 @@ export function AboutPage({ onNavigate }: { onNavigate: (page: string) => void }
                 transition={{ delay: index * 0.1 }}
                 className="h-full"
               >
-                <Card className="rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-lg shadow-ambient h-full group hover:bg-white/10 transition-colors p-8 lg:p-10">
-                  <div className="w-16 h-16 bg-blue-500 text-white rounded-2xl flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(59,130,246,0.3)]">
+                <Card className="rounded-[2.5rem] border border-blue-100 bg-white shadow-ambient h-full group hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-500/15 hover:border-blue-300 transition-all duration-500 p-8 lg:p-10">
+                  <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8 shadow-sm">
                     <story.icon className="h-8 w-8" strokeWidth={2} />
                   </div>
-                  <h3 className="text-5xl font-black text-white mb-4 tracking-tighter">{story.metric}</h3>
-                  <div className="w-12 h-1 bg-white/20 rounded-full mb-8 group-hover:w-full group-hover:bg-blue-500 transition-all duration-500" />
-                  <p className="text-slate-300 font-medium leading-relaxed italic text-lg mb-8">"{story.story}"</p>
-                  <p className="text-blue-300 font-black uppercase tracking-widest text-[10px]">{story.agent}</p>
+                  <h3 className="text-5xl font-black text-blue-800 mb-4 tracking-tighter">{story.metric}</h3>
+                  <div className="w-12 h-1 bg-slate-200 rounded-full mb-8 group-hover:w-full group-hover:bg-blue-500 transition-all duration-500" />
+                  <p className="text-slate-600 font-medium leading-relaxed italic text-lg mb-8">"{story.story}"</p>
+                  <p className="text-blue-600 font-black uppercase tracking-widest text-[10px]">{story.agent}</p>
                 </Card>
               </motion.div>
             ))}

@@ -383,7 +383,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
               >
-                <Card className="glass relative rounded-3xl border-slate-200/50 shadow-ambient overflow-hidden h-full group">
+                <Card className="glass relative rounded-3xl border-slate-200/50 shadow-ambient overflow-hidden h-full group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 hover:shadow-blue-500/10">
                   <div className="absolute top-0 left-0 w-1.5 h-full bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   <CardHeader>
                     <CardTitle className="text-xl font-bold text-slate-900">{item.title}</CardTitle>
@@ -499,7 +499,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="glass relative rounded-3xl border-slate-200/50 shadow-ambient-lg p-2">
+                <Card className="glass relative rounded-3xl border-slate-200/50 shadow-ambient-lg p-2 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 hover:shadow-blue-500/10">
                   <CardHeader>
                     <CardTitle className="text-lg font-bold text-slate-900">{testimonial.name}</CardTitle>
                     <CardDescription className="text-blue-600 font-bold text-xs uppercase tracking-wider">{testimonial.role}</CardDescription>
@@ -608,7 +608,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1 + i * 0.1, duration: 0.5 }}
+                whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(59,130,246,0.25)' }}
                 style={{
                   padding: '20px 16px',
                   borderRadius: '18px',
@@ -621,6 +621,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   flexDirection: 'column' as const,
                   alignItems: 'center',
                   gap: '8px',
+                  transition: 'all 0.3s ease',
                 }}
               >
                 <span style={{ fontSize: '26px', lineHeight: 1 }}>{item.icon}</span>
