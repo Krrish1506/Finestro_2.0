@@ -1,8 +1,17 @@
-# Breathing Space Upgrade
+# SaaS UI Spacing Upgrade
 
-- [ ] `HomePage.tsx`: Increase vertical paddings (py-24), grid gaps (gap-8), text bottom margins.
-- [ ] `DashboardPage.tsx`: Expand card paddings, grid gaps, and charting layout spacing.
-- [ ] `ProductsPage.tsx`: Enhance section vertical separation and intra-grid margins.
-- [ ] `SecurityPage.tsx`: Boost padding in architecture and compliance blocks.
-- [ ] `AboutPage.tsx` / `ContactPage.tsx`: Scale up text leading and section margins.
-- [ ] `Footer.tsx`: Expand internal grid gaps.
+## Checklist
+- [ ] Implement `py-16 md:py-24` responsive vertical section spacing on all global page blocks.
+- [ ] Upgrade internal structural container paddings to `p-6 lg:p-10`.
+- [ ] Enforce `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8` on all layout roots.
+- [ ] Increase horizontal/vertical grid gaps to `gap-8 md:gap-12`.
+- [ ] Enforce `leading-relaxed` (1.625) typography scale on all body text.
+- [ ] Provide consistent margin jumps between headers and `p` blocks (`mb-6`). 
+
+## Pages to Target
+1. `HomePage.tsx`
+2. `FeaturesPage.tsx`
+3. `SecurityPage.tsx`
+4. `DashboardPage.tsx`
+5. `AboutPage.tsx`
+6. `ContactPage.tsx`

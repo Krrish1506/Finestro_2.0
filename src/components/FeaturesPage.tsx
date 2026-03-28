@@ -162,14 +162,14 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
           <div className="absolute -bottom-40 -left-40 w-[700px] h-[700px] bg-gradient-to-tr from-blue-400/10 via-blue-500/5 to-transparent blur-[160px] rounded-full" />
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,transparent_70%)]" />
         </div>
-        <div className="max-w-7xl mx-auto text-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto text-center relative z-10 w-full px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           >
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/40 text-white text-[10px] font-black uppercase tracking-widest mb-16 backdrop-blur-md"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/40 text-white text-[10px] font-black uppercase tracking-widest mb-8 md:mb-12 backdrop-blur-md"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -177,7 +177,7 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
               <Sparkles className="size-4" />
               <span>Next-Gen Capabilities</span>
             </motion.div>
-            <h1 className="text-5xl md:text-7xl font-black mb-16 tracking-tight" style={{ color: '#F0F9FF', textShadow: '0 2px 20px rgba(0,0,0,0.35)' }}>
+            <h1 className="text-5xl md:text-7xl font-black mb-8 md:mb-12 tracking-tight" style={{ color: '#F0F9FF', textShadow: '0 2px 20px rgba(0,0,0,0.35)' }}>
               Advanced{' '}
               <span style={{
                 background: 'linear-gradient(90deg, #7DD3FC 0%, #38BDF8 50%, #BAE6FD 100%)',
@@ -189,7 +189,7 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
                 Features
               </span>
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto font-medium leading-loose" style={{ color: 'rgba(224,242,254,0.92)', textShadow: '0 1px 8px rgba(0,0,0,0.25)' }}>
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto font-medium leading-relaxed" style={{ color: 'rgba(224,242,254,0.92)', textShadow: '0 1px 8px rgba(0,0,0,0.25)' }}>
               Powerful tools designed to give the modern agent a decisive edge. Powered by our proprietary Financial LLM.
             </p>
           </motion.div>
@@ -197,16 +197,16 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
       </section>
 
       {/* Features Grid */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 md:mb-12">
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">Intelligent Modules</h2>
             <p className="text-xl text-slate-500 font-medium max-w-2xl mx-auto">
               Cutting-edge technology meets practical insurance operations.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 lg:gap-8 lg:gap-12">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -217,7 +217,7 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
               >
                 <Card className="glass relative rounded-[2.5rem] border border-slate-200/50 shadow-sm p-4 lg:p-10 group hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-500/15 hover:border-blue-200 transition-all duration-500 h-full bg-white">
                   <CardHeader className="p-10 lg:p-10 pb-4">
-                    <div className="flex items-start justify-between mb-16">
+                    <div className="flex items-start justify-between mb-8 md:mb-12">
                       <div className={`w-20 h-20 ${feature.bgColor} rounded-3xl flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-500`}>
                         <feature.icon className={`h-10 w-10 ${feature.color}`} />
                       </div>
@@ -226,12 +226,12 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
                       </Badge>
                     </div>
                     <CardTitle className="text-3xl font-black text-slate-900 mb-4 tracking-tight">{feature.title}</CardTitle>
-                    <CardDescription className="text-lg text-slate-500 font-medium leading-loose">{feature.description}</CardDescription>
+                    <CardDescription className="text-lg text-slate-500 font-medium leading-relaxed">{feature.description}</CardDescription>
                   </CardHeader>
                   <CardContent className="p-10 lg:p-10 pt-0">
                     <div className="space-y-6 pt-6 border-t border-slate-100">
                       <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Strategic Advantages</p>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
                         {feature.benefits.map((benefit, bIndex) => (
                           <div key={bIndex} className="flex items-center gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-100 group-hover:border-blue-100 transition-colors">
                             <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0 shadow-sm" />
@@ -249,17 +249,17 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
       </section>
 
       {/* Use Cases */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-slate-50 relative overflow-hidden">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
+        <div className="max-w-7xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 md:mb-12">
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">Vertical Flows</h2>
-            <p className="text-xl text-slate-500 font-medium max-w-2xl mx-auto leading-loose">
+            <p className="text-xl text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed">
               Real-world scenarios showing how our infrastructure perfectly orchestrates your processes.
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-10">
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
             {useCases.map((useCase, index) => (
               <motion.div
                 key={index}
@@ -277,11 +277,11 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
                   <CardContent className="p-10 lg:p-10 pt-0 relative z-10">
                     <div className="space-y-6">
                       {useCase.steps.map((step, sIndex) => (
-                        <div key={sIndex} className="flex gap-12 items-start relative group/step">
+                        <div key={sIndex} className="flex gap-8 lg:gap-12 items-start relative group/step">
                           <div className="flex-shrink-0 w-10 h-10 bg-slate-50 border border-slate-100 rounded-[1rem] flex items-center justify-center text-sm font-black text-slate-400 group-hover/step:bg-blue-600 group-hover/step:text-white group-hover/step:border-blue-600 transition-all duration-300 shadow-sm z-10">
                             {sIndex + 1}
                           </div>
-                          <p className="text-sm font-bold text-slate-600 mt-2.5 leading-loose group-hover/step:text-slate-900 transition-colors">{step}</p>
+                          <p className="text-sm font-bold text-slate-600 mt-2.5 leading-relaxed group-hover/step:text-slate-900 transition-colors">{step}</p>
                           {sIndex < useCase.steps.length - 1 && (
                             <div className="absolute left-5 top-10 w-[2px] h-8 bg-slate-100 group-hover/step:bg-blue-200 transition-colors z-0"></div>
                           )}
@@ -297,92 +297,93 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
       </section>
 
       {/* Technical Specs */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <Tabs defaultValue="ai" className="w-full">
-            <div className="flex justify-center mb-16">
-              <TabsList className="bg-slate-50 rounded-[2.5rem] p-2 h-20 border border-slate-100 shadow-sm max-w-2xl w-full">
-                <TabsTrigger value="ai" className="rounded-[2rem] data-[state=active]:bg-white data-[state=active]:shadow-ambient text-lg font-black tracking-tight flex-1">AI Engine</TabsTrigger>
-                <TabsTrigger value="security" className="rounded-[2rem] data-[state=active]:bg-white data-[state=active]:shadow-ambient text-lg font-black tracking-tight flex-1">Security</TabsTrigger>
-                <TabsTrigger value="integration" className="rounded-[2rem] data-[state=active]:bg-white data-[state=active]:shadow-ambient text-lg font-black tracking-tight flex-1">Integrations</TabsTrigger>
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Tabs defaultValue="ai" className="w-full relative">
+            <div className="flex justify-center mb-12 lg:mb-16 sticky top-24 z-50">
+              <TabsList className="bg-slate-900/5 backdrop-blur-xl rounded-full p-2 h-auto flex border border-white/20 shadow-lg max-w-2xl w-full">
+                <TabsTrigger value="ai" className="rounded-full data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=active]:text-blue-700 text-slate-600 hover:text-slate-900 text-sm md:text-base font-bold tracking-tight flex-1 py-3 transition-all duration-300">AI Engine</TabsTrigger>
+                <TabsTrigger value="security" className="rounded-full data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=active]:text-blue-700 text-slate-600 hover:text-slate-900 text-sm md:text-base font-bold tracking-tight flex-1 py-3 transition-all duration-300">Security</TabsTrigger>
+                <TabsTrigger value="integration" className="rounded-full data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=active]:text-blue-700 text-slate-600 hover:text-slate-900 text-sm md:text-base font-bold tracking-tight flex-1 py-3 transition-all duration-300">Integrations</TabsTrigger>
               </TabsList>
             </div>
 
-            <TabsContent value="ai">
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-                <Card className="bg-white rounded-[3rem] border border-slate-200 shadow-ambient-lg p-10 lg:p-14 overflow-hidden relative">
-                  <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 blur-[100px] rounded-full point-events-none"></div>
-                  <CardHeader className="px-0 pb-20 relative z-10">
-                    <CardTitle className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">Intelligence Architecture</CardTitle>
-                    <CardDescription className="text-xl text-slate-500 font-medium">Our models are trained on millions of high-fidelity financial transactions.</CardDescription>
-                  </CardHeader>
-                  <CardContent className="px-0 space-y-4 relative z-10">
-                    <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-                      <div className="space-y-8">
-                        <div>
-                          <h4 className="text-2xl font-black text-slate-900 mb-16 flex items-center gap-12">
-                            <div className="w-14 h-14 bg-blue-50 rounded-[1.5rem] flex items-center justify-center">
-                              <Brain className="h-7 w-7 text-blue-600" />
-                            </div>
-                            Predictive Operations
-                          </h4>
-                          <div className="grid gap-12">
-                            {[
-                              { label: "Client Churn Guard", val: "92% Accuracy" },
-                              { label: "Policy Recommendation", val: "Deep ML" },
-                              { label: "Risk Assessment", val: "Automated" },
-                              { label: "Premium Optimization", val: "Dynamic" }
-                            ].map((item, i) => (
-                              <div key={i} className="flex justify-between items-center p-5 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors">
-                                <span className="font-bold text-slate-700">{item.label}</span>
-                                <Badge className="bg-white text-blue-600 shadow-sm border border-slate-100 font-black px-4 py-1.5 rounded-full">{item.val}</Badge>
-                              </div>
-                            ))}
-                          </div>
+            <TabsContent value="ai" className="mt-0 outline-none mt-8">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+                <div className="relative rounded-[2.5rem] border border-slate-200/50 bg-white shadow-2xl overflow-hidden">
+                  <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-blue-500/10 via-indigo-500/5 to-transparent blur-[100px] rounded-full pointer-events-none"></div>
+                  <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-violet-500/10 to-transparent blur-[100px] rounded-full pointer-events-none"></div>
+                  
+                  <div className="px-8 py-12 md:px-16 md:py-20 relative z-10 border-b border-slate-100">
+                    <Badge className="bg-blue-50 text-blue-600 border border-blue-100 font-bold px-4 py-1.5 rounded-full uppercase tracking-widest text-xs mb-6 shadow-sm">Core Architecture</Badge>
+                    <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600">Intelligence Architecture</h3>
+                    <p className="text-xl text-slate-500 font-medium max-w-2xl leading-relaxed">Our models are trained on millions of high-fidelity financial transactions, ensuring unprecedented precision.</p>
+                  </div>
+
+                  <div className="p-8 md:p-16 grid lg:grid-cols-2 gap-8 lg:gap-12 relative z-10 bg-slate-50/50">
+                    <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-lg hover:shadow-xl transition-shadow duration-300 relative group">
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl pointer-events-none"></div>
+                      <div className="flex items-center gap-6 mb-10 relative z-10">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <Brain className="h-8 w-8 text-white" strokeWidth={1.5} />
                         </div>
+                        <h4 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">Predictive Ops</h4>
                       </div>
-                      <div className="space-y-8">
-                        <div>
-                          <h4 className="text-2xl font-black text-slate-900 mb-16 flex items-center gap-12">
-                            <div className="w-14 h-14 bg-emerald-50 rounded-[1.5rem] flex items-center justify-center">
-                              <Scan className="h-7 w-7 text-emerald-600" />
-                            </div>
-                            Vision & OCR
-                          </h4>
-                          <div className="grid gap-12">
-                            {[
-                              { label: "Extraction Precision", val: "99.5%" },
-                              { label: "Regional Context", val: "22+ Languages" },
-                              { label: "Document Latency", val: "120ms" },
-                              { label: "Handwriting Analysis", val: "Vision-AI" }
-                            ].map((item, i) => (
-                              <div key={i} className="flex justify-between items-center p-5 bg-slate-50 rounded-2xl border border-slate-100 hover:border-emerald-200 transition-colors">
-                                <span className="font-bold text-slate-700">{item.label}</span>
-                                <Badge className="bg-white text-emerald-600 shadow-sm border border-slate-100 font-black px-4 py-1.5 rounded-full">{item.val}</Badge>
-                              </div>
-                            ))}
+                      <div className="space-y-4 relative z-10">
+                        {[
+                          { label: "Client Churn Guard", val: "92% Accuracy" },
+                          { label: "Policy Recommendation", val: "Deep ML" },
+                          { label: "Risk Assessment", val: "Automated" },
+                          { label: "Premium Optimization", val: "Dynamic" }
+                        ].map((item, i) => (
+                          <div key={i} className="flex justify-between items-center p-5 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 hover:bg-white hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 cursor-pointer group/item">
+                            <span className="font-semibold text-slate-700 group-hover/item:text-blue-700 transition-colors">{item.label}</span>
+                            <Badge className="bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 border-none shadow-sm font-bold px-4 py-1.5 rounded-full group-hover/item:from-blue-500 group-hover/item:to-indigo-600 group-hover/item:text-white transition-all duration-300">{item.val}</Badge>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+
+                    <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-lg hover:shadow-xl transition-shadow duration-300 relative group">
+                      <div className="absolute inset-0 bg-gradient-to-br from-violet-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl pointer-events-none"></div>
+                      <div className="flex items-center gap-6 mb-10 relative z-10">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <Scan className="h-8 w-8 text-white" strokeWidth={1.5} />
+                        </div>
+                        <h4 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">Vision & OCR</h4>
+                      </div>
+                      <div className="space-y-4 relative z-10">
+                        {[
+                          { label: "Extraction Precision", val: "99.5%" },
+                          { label: "Regional Context", val: "22+ Languages" },
+                          { label: "Document Latency", val: "120ms" },
+                          { label: "Handwriting Analysis", val: "Vision-AI" }
+                        ].map((item, i) => (
+                          <div key={i} className="flex justify-between items-center p-5 bg-slate-50 rounded-2xl border border-slate-100 hover:border-violet-300 hover:bg-white hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 cursor-pointer group/item">
+                            <span className="font-semibold text-slate-700 group-hover/item:text-violet-700 transition-colors">{item.label}</span>
+                            <Badge className="bg-gradient-to-r from-violet-100 to-fuchsia-100 text-violet-700 border-none shadow-sm font-bold px-4 py-1.5 rounded-full group-hover/item:from-violet-500 group-hover/item:to-fuchsia-600 group-hover/item:text-white transition-all duration-300">{item.val}</Badge>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             </TabsContent>
 
             <TabsContent value="security">
               <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }}>
                 <Card className="bg-white rounded-[3rem] border border-slate-200 shadow-ambient-lg p-10 lg:p-14 overflow-hidden">
-                  <CardHeader className="px-0 pb-20">
+                  <CardHeader className="px-0 pb-16 md:pb-24">
                     <CardTitle className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">Institutional Trust</CardTitle>
-                    <CardDescription className="text-xl text-slate-500 font-medium leading-loose">Infrastructure designed for zero-trust financial environments.</CardDescription>
+                    <CardDescription className="text-xl text-slate-500 font-medium leading-relaxed">Infrastructure designed for zero-trust financial environments.</CardDescription>
                   </CardHeader>
                   <CardContent className="px-0 space-y-4">
-                    <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
+                    <div className="grid md:grid-cols-2 gap-8 lg:gap-12 lg:gap-8 lg:gap-12">
                       <div className="p-10 lg:p-12 bg-[#0F172A] text-white rounded-[2.5rem] relative overflow-hidden group shadow-xl">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-[80px] rounded-full group-hover:bg-blue-500/30 transition-colors"></div>
-                        <Shield className="h-14 w-14 text-blue-400 mb-10 relative z-10" />
-                        <h4 className="text-3xl font-black mb-16 tracking-tight relative z-10">Data Fortification</h4>
+                        <Shield className="h-14 w-14 text-blue-400 mb-8 md:mb-12 relative z-10" />
+                        <h4 className="text-3xl font-black mb-8 md:mb-12 tracking-tight relative z-10">Data Fortification</h4>
                         <ul className="space-y-6 relative z-10">
                           {[
                             "AES-256 Multi-Layer Encryption",
@@ -390,7 +391,7 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
                             "Hardware Security Modules (HSM)",
                             "Atomic Access Audits"
                           ].map((item, i) => (
-                            <li key={i} className="flex items-center gap-12 text-blue-100 font-bold text-lg">
+                            <li key={i} className="flex items-center gap-8 lg:gap-12 text-blue-100 font-bold text-lg">
                               <div className="w-2 h-2 bg-blue-400 rounded-full shadow-[0_0_10px_rgba(96,165,250,0.5)]" />
                               {item}
                             </li>
@@ -399,8 +400,8 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
                       </div>
                       <div className="p-10 lg:p-12 bg-blue-900 text-white rounded-[2.5rem] relative overflow-hidden group shadow-xl">
                         <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/20 blur-[80px] rounded-full group-hover:bg-emerald-500/30 transition-colors"></div>
-                        <Database className="h-14 w-14 text-emerald-400 mb-10 relative z-10" />
-                        <h4 className="text-3xl font-black mb-16 tracking-tight relative z-10">Regulatory Shield</h4>
+                        <Database className="h-14 w-14 text-emerald-400 mb-8 md:mb-12 relative z-10" />
+                        <h4 className="text-3xl font-black mb-8 md:mb-12 tracking-tight relative z-10">Regulatory Shield</h4>
                         <ul className="space-y-6 relative z-10">
                           {[
                             "IRDAI Framework Compliance",
@@ -408,7 +409,7 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
                             "GDPR Sovereign Residency",
                             "Quarterly Pen Tests"
                           ].map((item, i) => (
-                            <li key={i} className="flex items-center gap-12 text-emerald-100 font-bold text-lg">
+                            <li key={i} className="flex items-center gap-8 lg:gap-12 text-emerald-100 font-bold text-lg">
                               <div className="w-2 h-2 bg-emerald-400 rounded-full shadow-[0_0_10px_rgba(52,211,153,0.5)]" />
                               {item}
                             </li>
@@ -424,9 +425,9 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
             <TabsContent value="integration">
               <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
                 <Card className="bg-white rounded-[3rem] border border-slate-200 shadow-ambient-lg p-10 lg:p-14 overflow-hidden">
-                  <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+                  <div className="grid md:grid-cols-2 gap-8 lg:gap-12 lg:gap-8 lg:gap-12 items-center">
                     <div>
-                      <CardHeader className="px-0 mb-10">
+                      <CardHeader className="px-0 mb-8 md:mb-12">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-slate-500 text-[10px] font-black uppercase tracking-widest mb-6">
                            API & WEBHOOKS
                         </div>
@@ -434,23 +435,23 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
                         <CardDescription className="text-xl text-slate-500 font-medium">Connect Finestro into your existing business vertical seamlessly.</CardDescription>
                       </CardHeader>
                       <div className="space-y-6">
-                        <div className="flex gap-10 p-10 bg-slate-50 rounded-[2rem] border border-slate-200 hover:border-blue-200 hover:shadow-sm transition-all">
+                        <div className="flex gap-8 lg:gap-12 p-10 bg-slate-50 rounded-[2rem] border border-slate-200 hover:border-blue-200 hover:shadow-sm transition-all">
                           <Zap className="h-10 w-10 text-blue-600 shrink-0" />
                           <div>
                             <h5 className="text-xl font-black text-slate-900 mb-2">REST Command Center</h5>
-                            <p className="text-slate-500 font-medium leading-loose">Full API documentation with 120ms p99 latency guarantees.</p>
+                            <p className="text-slate-500 font-medium leading-relaxed">Full API documentation with 120ms p99 latency guarantees.</p>
                           </div>
                         </div>
-                        <div className="flex gap-10 p-10 bg-slate-50 rounded-[2rem] border border-slate-200 hover:border-blue-200 hover:shadow-sm transition-all">
+                        <div className="flex gap-8 lg:gap-12 p-10 bg-slate-50 rounded-[2rem] border border-slate-200 hover:border-blue-200 hover:shadow-sm transition-all">
                           <Wand2 className="h-10 w-10 text-blue-600 shrink-0" />
                           <div>
                             <h5 className="text-xl font-black text-slate-900 mb-2">Webhook Events</h5>
-                            <p className="text-slate-500 font-medium leading-loose">Real-time triggers for CRM sync and policy updates.</p>
+                            <p className="text-slate-500 font-medium leading-relaxed">Real-time triggers for CRM sync and policy updates.</p>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-10">
+                    <div className="grid grid-cols-2 gap-8 lg:gap-12">
                       {[
                         { name: "WhatsApp APIs", color: "text-emerald-600" },
                         { name: "Payments / UPI", color: "text-blue-600" },
@@ -473,22 +474,23 @@ export function FeaturesPage({ onNavigate }: { onNavigate: (page: string) => voi
       </section>
 
       {/* CTA */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-slate-50">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/10 blur-[120px] rounded-full"></div>
+      <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-slate-900 border-t border-slate-800">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-b from-blue-600/20 to-violet-600/20 blur-[150px] rounded-full opacity-50 mix-blend-screen"></div>
         </div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-5xl md:text-7xl font-black mb-16 tracking-tight leading-[1.1] text-slate-900">
-            Ready to Upgrade Your <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Operations?</span>
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <Badge className="bg-white/10 text-blue-300 border border-white/20 font-bold px-5 py-2 rounded-full uppercase tracking-widest text-sm mb-10 backdrop-blur-md">Deploy In Minutes</Badge>
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 md:mb-12 tracking-tight leading-[1.05] text-white">
+            Ready to Upgrade<br />Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400">Operations?</span>
           </h2>
-          <p className="text-xl md:text-2xl mb-16 text-slate-600 font-medium leading-loose max-w-2xl mx-auto">
-            Deploy the Finestro core into your agency in under 10 minutes. No credit card required.
+          <p className="text-xl md:text-2xl mb-12 lg:mb-16 text-slate-300 font-medium leading-relaxed max-w-3xl mx-auto">
+            Deploy the Finestro core into your agency in under 10 minutes. Build intelligent workflows that scale seamlessly.
           </p>
-          <div className="flex flex-col sm:flex-row gap-10 justify-center">
-            <Button onClick={() => onNavigate('auth')} size="lg" className="rounded-full h-16 px-10 text-lg shadow-lg bg-blue-600 text-white hover:bg-blue-700 w-full sm:w-auto font-black tracking-wide border-0 focus:ring-4 focus:ring-blue-500/30 transition-all">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button onClick={() => onNavigate('auth')} size="lg" className="rounded-full h-16 lg:h-20 px-10 lg:px-14 text-lg lg:text-xl shadow-[0_0_40px_-10px_rgba(59,130,246,0.6)] bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-500 hover:to-indigo-500 hover:scale-[1.02] hover:shadow-[0_0_60px_-10px_rgba(59,130,246,0.8)] w-full sm:w-auto font-black tracking-wide border-0 transition-all duration-300">
               Start Enterprise Trial
             </Button>
-            <Button onClick={() => onNavigate('auth')} size="lg" variant="secondary" className="rounded-full h-16 px-10 text-lg shadow-lg border-2 border-slate-300 w-full sm:w-auto font-black tracking-wide transition-all" style={{ backgroundColor: "#ffffff", color: "#0f172a" }}>
+            <Button onClick={() => onNavigate('auth')} size="lg" variant="outline" className="rounded-full h-16 lg:h-20 px-10 lg:px-14 text-lg lg:text-xl border-2 border-white/20 bg-transparent text-white hover:bg-white/10 hover:border-white/40 hover:scale-[1.02] w-full sm:w-auto font-black tracking-wide transition-all duration-300 backdrop-blur-md">
               Talk to Solutions Engineer
             </Button>
           </div>

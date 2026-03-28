@@ -128,14 +128,14 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
           <div className="absolute -bottom-40 -left-40 w-[700px] h-[700px] bg-gradient-to-tr from-blue-400/10 via-blue-500/5 to-transparent blur-[160px] rounded-full" />
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,transparent_70%)]" />
         </div>
-        <div className="max-w-7xl mx-auto text-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto text-center relative z-10 w-full px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           >
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/40 text-white text-[10px] font-black uppercase tracking-widest mb-16 backdrop-blur-md"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/40 text-white text-[10px] font-black uppercase tracking-widest mb-8 md:mb-12 backdrop-blur-md"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -143,7 +143,7 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
               <Sparkles className="size-4" />
               <span>Premium Products Suite</span>
             </motion.div>
-            <h1 className="text-5xl md:text-7xl font-black mb-16 tracking-tight" style={{ color: '#F0F9FF', textShadow: '0 2px 20px rgba(0,0,0,0.35)' }}>
+            <h1 className="text-5xl md:text-7xl font-black mb-8 md:mb-12 tracking-tight" style={{ color: '#F0F9FF', textShadow: '0 2px 20px rgba(0,0,0,0.35)' }}>
               Digital{' '}
               <span style={{
                 background: 'linear-gradient(90deg, #7DD3FC 0%, #38BDF8 50%, #BAE6FD 100%)',
@@ -155,7 +155,7 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
                 Infrastructure
               </span>
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto font-medium leading-loose" style={{ color: 'rgba(224,242,254,0.92)', textShadow: '0 1px 8px rgba(0,0,0,0.25)' }}>
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto font-medium leading-relaxed" style={{ color: 'rgba(224,242,254,0.92)', textShadow: '0 1px 8px rgba(0,0,0,0.25)' }}>
               Comprehensive tools for managing Health, Life, General Insurance, and Mutual Funds—all in one premium unified workspace.
             </p>
           </motion.div>
@@ -163,9 +163,9 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
       </section>
 
       {/* Key Features Overview */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 md:mb-12">
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight uppercase tracking-widest text-sm text-blue-600 mb-4 inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full border border-blue-100">
               <Shield className="size-4" /> Unified Core Features
             </h2>
@@ -173,7 +173,7 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
               Every vertical in our platform is powered by these institutional tools.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -184,7 +184,7 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
               >
                 <Card className="bg-white rounded-[2.5rem] border border-slate-200 shadow-md p-4 lg:p-10 group hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-2 hover:border-blue-300 transition-all duration-500 h-full cursor-pointer">
                   <CardHeader className="p-10 pb-2">
-                    <div className="flex items-start justify-between mb-16">
+                    <div className="flex items-start justify-between mb-8 md:mb-12">
                       <div className="w-20 h-20 bg-slate-50 rounded-[1.5rem] flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-50 transition-all duration-500 border border-slate-100 group-hover:border-blue-100 shadow-sm">
                         <feature.icon className="h-10 w-10 text-slate-400 group-hover:text-blue-600 transition-colors" strokeWidth={1.5} />
                       </div>
@@ -195,7 +195,7 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
                     <CardTitle className="text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors tracking-tight">{feature.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="p-10 pt-4">
-                    <p className="text-slate-500 font-medium leading-loose">{feature.description}</p>
+                    <p className="text-slate-500 font-medium leading-relaxed">{feature.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -205,23 +205,20 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
       </section>
 
       {/* Product Categories with Tabs */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden relative">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 overflow-hidden relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.05)_0%,transparent_60%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <Tabs defaultValue="health" className="w-full">
-            <div className="flex justify-center mb-20">
-              <TabsList className="bg-slate-50 rounded-[3rem] p-2 h-auto lg:h-20 border border-slate-200 shadow-sm w-full max-w-4xl grid grid-cols-2 lg:grid-cols-4 gap-2">
+            <div className="flex justify-center mb-12 lg:mb-16">
+              <TabsList className="bg-slate-200/50 rounded-full p-2 h-auto flex flex-wrap justify-center border-none shadow-none gap-2 sm:gap-6 w-full max-w-4xl">
                 {productCategories.map((category) => (
                   <TabsTrigger
                     key={category.id}
                     value={category.id}
-                    className="flex flex-row lg:flex-col items-center justify-center gap-3 px-6 py-4 lg:py-0 rounded-[2.5rem] data-[state=active]:bg-white data-[state=active]:shadow-ambient data-[state=active]:border border-transparent data-[state=active]:border-slate-200 hover:bg-white hover:shadow-sm hover:-translate-y-1 active:scale-95 transition-all duration-300 group h-full cursor-pointer"
+                    className="flex flex-row items-center justify-center gap-3 px-6 py-3 rounded-full data-[state=active]:bg-white data-[state=active]:text-slate-900 text-slate-600 data-[state=active]:shadow-md border border-transparent data-[state=active]:border-slate-200 hover:bg-slate-100 transition-all duration-200 cursor-pointer"
                   >
-                    <div className={`p-2 lg:p-0 lg:mb-1 rounded-xl shadow-inner lg:shadow-none group-data-[state=active]:bg-transparent transition-colors group-hover:scale-110 duration-300`}>
-                      <category.icon className={`h-5 w-5 lg:h-6 lg:w-6 text-slate-400 ${category.hoverTextColor} group-hover:text-blue-500 transition-colors`} />
-                    </div>
-                    <span className="font-black text-sm text-slate-500 group-data-[state=active]:text-slate-900 transition-colors tracking-tight hidden lg:block">{category.name}</span>
-                    <span className="font-black text-sm text-slate-500 group-data-[state=active]:text-slate-900 transition-colors tracking-tight lg:hidden truncate">{category.name.split(' ')[0]}</span>
+                    <category.icon className={`h-5 w-5 ${category.hoverTextColor} group-data-[state=active]:text-current transition-colors`} strokeWidth={2} />
+                    <span className="font-bold text-sm tracking-tight">{category.name}</span>
                   </TabsTrigger>
                 ))}
               </TabsList>
@@ -230,51 +227,44 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
             {productCategories.map((category) => (
               <TabsContent key={category.id} value={category.id} className="mt-0 outline-none">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="space-y-16"
+                  transition={{ duration: 0.3 }}
+                  className="space-y-12"
                 >
-                  {/* Category Header */}
-                  <div className={`bg-white relative rounded-[3rem] p-10 lg:p-16 overflow-hidden border border-slate-200 shadow-2xl shadow-blue-900/5`}>
-                    <div className={`absolute top-0 left-0 w-3 h-full ${category.bgColor}`}></div>
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-slate-50 to-transparent blur-3xl rounded-full pointer-events-none"></div>
-                    <div className="flex flex-col lg:flex-row items-start lg:items-center gap-10 relative z-10">
-                      <div className="w-28 h-28 bg-white rounded-[2rem] flex items-center justify-center shadow-ambient-lg border border-slate-100 shrink-0 relative overflow-hidden group">
-                        <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 ${category.bgColor}`}></div>
-                        <category.icon className={`h-12 w-12 ${category.textColor} relative z-10 group-hover:scale-110 transition-transform duration-300`} strokeWidth={1.5} />
+                  {/* Category Header Card */}
+                  <Card className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-md relative overflow-hidden">
+                    <div className="flex flex-col md:flex-row items-start md:items-center gap-6 relative z-10">
+                      <div className={`w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 shadow-sm ${category.lightBg}`}>
+                        <category.icon className={`h-8 w-8 ${category.textColor}`} strokeWidth={2} />
                       </div>
                       <div>
-                        <Badge className={`${category.lightBg} ${category.textColor} ${category.borderColor} font-black text-[10px] tracking-widest uppercase mb-6 px-4 py-1.5 shadow-sm rounded-full border`}>PRODUCT LINE</Badge>
-                        <h2 className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">{category.name}</h2>
-                        <p className="text-xl text-slate-500 mt-6 max-w-3xl font-medium leading-loose">{category.description}</p>
+                        <Badge className="bg-slate-100 text-slate-500 font-semibold text-xs tracking-wider uppercase mb-3 px-3 py-1 shadow-none border-none">PRODUCT LINE</Badge>
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">{category.name}</h2>
+                        <p className="text-base text-slate-500 mt-3 max-w-2xl leading-relaxed">{category.description}</p>
                       </div>
                     </div>
-                  </div>
+                  </Card>
 
                   {/* Plans Grid */}
-                  <div className="grid md:grid-cols-2 gap-10">
+                  <div className="grid md:grid-cols-2 gap-8">
                     {category.plans.map((plan, index) => (
-                      <Card key={index} className="bg-white rounded-[2.5rem] border border-slate-200 shadow-md overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-2 hover:border-blue-300 transition-all duration-500 relative cursor-pointer">
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-slate-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <CardHeader className="p-10 lg:p-10 pb-0">
-                          <div className="flex flex-col sm:flex-row justify-between items-start gap-12 mb-16">
-                            <CardTitle className="text-2xl lg:text-3xl font-black text-slate-900 tracking-tight">{plan.name}</CardTitle>
-                            <Badge className="bg-blue-50 text-blue-600 border border-blue-200 shadow-sm rounded-full px-5 py-2 font-black text-xs tracking-wide shrink-0">
-                              {plan.coverage}
-                            </Badge>
-                          </div>
-                        </CardHeader>
-                        <CardContent className="p-10 lg:p-10 pt-6">
-                          <ul className="space-y-6">
-                            {plan.features.map((feature, fIndex) => (
-                              <li key={fIndex} className="flex items-start gap-12 group/item">
-                                <div className={`w-2.5 h-2.5 rounded-full shrink-0 shadow-sm mt-1.5 group-hover/item:scale-125 transition-transform duration-300 ${category.bgColor}`} />
-                                <span className="text-slate-600 font-bold leading-loose group-hover/item:text-slate-900 transition-colors">{feature}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </CardContent>
+                      <Card key={index} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col h-full group">
+                        <div className="flex justify-between items-start mb-6">
+                          <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{plan.name}</h3>
+                          <Badge className="bg-slate-50 text-slate-700 border border-slate-200 font-semibold px-3 py-1 shrink-0">{plan.coverage}</Badge>
+                        </div>
+                        <ul className="space-y-3 flex-1 mb-8">
+                          {plan.features.map((feature, fIndex) => (
+                            <li key={fIndex} className="flex items-start gap-3">
+                              <ShieldCheck className={`h-5 w-5 shrink-0 ${category.textColor} mt-0.5`} strokeWidth={2} />
+                              <span className="text-sm text-slate-600">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <Button className="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium h-11 rounded-xl transition-all shadow-md">
+                          View Plan
+                        </Button>
                       </Card>
                     ))}
                   </div>
@@ -282,19 +272,19 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
                   {/* Category-specific Tools */}
                   <Card className="bg-[#F8FAFC] rounded-[3rem] border border-slate-200 shadow-md overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-2 hover:border-blue-300 transition-all duration-500">
                     <CardHeader className="p-10 lg:p-12 pb-8 text-center lg:text-left border-b border-slate-200/50">
-                      <CardTitle className="text-3xl lg:text-4xl font-black flex flex-col lg:flex-row items-center gap-12 text-slate-900 tracking-tight">
+                      <CardTitle className="text-3xl lg:text-4xl font-black flex flex-col lg:flex-row items-center gap-8 lg:gap-12 text-slate-900 tracking-tight">
                         <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-slate-100 hidden lg:flex">
                            <Zap className="h-8 w-8 text-amber-500" strokeWidth={1.5} />
                         </div>
                         <Zap className="h-8 w-8 text-amber-500 lg:hidden" strokeWidth={1.5} />
                         Integrated Verticals
                       </CardTitle>
-                      <CardDescription className="text-xl font-medium text-slate-500 mt-4 leading-loose lg:pl-20">
+                      <CardDescription className="text-xl font-medium text-slate-500 mt-4 leading-relaxed lg:pl-20">
                         Streamline your {category.name.toLowerCase()} operations with our embedded infrastructure tools.
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="p-10 lg:p-12 pt-8">
-                      <div className="grid md:grid-cols-3 gap-10">
+                      <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
                         {[
                           { icon: Search, title: "Comparison Engine", desc: "Native side-by-side analysis for 20+ carriers instantly." },
                           { icon: Upload, title: "KYC Onboarding", desc: "Automated Aadhaar/PAN validation triggers matching regulations." },
@@ -306,7 +296,7 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
                               <tool.icon className="h-8 w-8 text-slate-400 group-hover/tool:text-white transition-colors" strokeWidth={1.5} />
                             </div>
                             <h5 className="text-xl font-black text-slate-900 mb-3 group-hover/tool:text-blue-600 transition-colors tracking-tight relative z-10">{tool.title}</h5>
-                            <p className="text-base font-medium text-slate-500 leading-loose relative z-10">{tool.desc}</p>
+                            <p className="text-base font-medium text-slate-500 leading-relaxed relative z-10">{tool.desc}</p>
                           </div>
                         ))}
                       </div>
@@ -320,11 +310,11 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
       </section>
 
       {/* Document Upload Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-slate-50 relative overflow-hidden text-slate-900 border-t border-slate-200/50">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 relative overflow-hidden text-slate-900 border-t border-slate-200/50">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.05),transparent_60%)]"></div>
         <div className="absolute top-1/2 right-0 w-[800px] h-[800px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
+        <div className="max-w-7xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -371,7 +361,7 @@ export function ProductsPage({ onNavigate }: { onNavigate: (page: string) => voi
                   </div>
                   
                   <h3 className="text-3xl font-normal mb-6 text-blue-600 tracking-tight relative z-10">Enterprise Dropzone</h3>
-                  <p className="text-slate-600 font-medium mb-16 leading-loose max-w-sm mx-auto relative z-10 text-base">
+                  <p className="text-slate-600 font-medium mb-8 md:mb-12 leading-relaxed max-w-sm mx-auto relative z-10 text-base">
                     Institutional-grade document ingestion. Drag PDFs, high-res images, or ZIP archives up to <span className="text-blue-500 font-bold">100MB</span> per session.
                   </p>
                   

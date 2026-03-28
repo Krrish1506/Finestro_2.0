@@ -347,8 +347,8 @@ export function DashboardPage() {
           <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(148,163,184,0.04) 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
         </div>
 
-        <div className="max-w-7xl mx-auto w-full relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
+        <div className="max-w-7xl mx-auto w-full relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 lg:gap-12">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, ease: [0.4,0,0.2,1] }}>
               {/* Badge */}
               <motion.div
@@ -451,20 +451,20 @@ export function DashboardPage() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 md:mb-12">
           {stats.map((stat, i) => (
             <motion.div key={i} whileHover={{ y: -5 }} className="group" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 * i }}>
-              <div className="relative rounded-2xl overflow-hidden border border-slate-200/70 shadow-sm hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-1 transition-all duration-300 bg-white p-10 group-hover:border-blue-200">
+              <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-lg hover:shadow-blue-500/15 hover:-translate-y-1 hover:border-blue-200 transition-all duration-200 bg-white p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-[10px] font-black text-slate-600 uppercase tracking-widest">{stat.title}</span>
+                  <span className="text-sm text-gray-500 font-medium">{stat.title}</span>
                   <div className={`w-10 h-10 ${stat.bgColor} rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}>
                     <stat.icon className={`h-5 w-5 ${stat.color}`} strokeWidth={1.5} />
                   </div>
                 </div>
-                <div className="text-3xl font-black tracking-tight text-slate-900 mb-1">{stat.value}</div>
+                <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">{stat.value}</div>
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">{stat.change}</span>
                   <span className="text-[10px] text-slate-600 font-bold uppercase tracking-widest">vs last month</span>
@@ -478,7 +478,7 @@ export function DashboardPage() {
         <main>
           <Tabs defaultValue="clients" className="space-y-8">
             <div className="flex justify-start overflow-x-auto pb-4 scrollbar-hide">
-              <TabsList className="bg-white/80 backdrop-blur-md rounded-2xl p-2 border border-slate-200/50 shadow-sm flex gap-2 h-auto justify-start border-none">
+              <TabsList className="bg-gray-100 rounded-full p-1.5 flex gap-1 sm:gap-2 h-auto justify-start border-none overflow-x-auto w-full md:w-auto">
                 {[
                   { value: "clients", label: "Clients", icon: Users },
                   { value: "claims", label: "Claims", icon: FileText },
@@ -491,7 +491,7 @@ export function DashboardPage() {
                   <TabsTrigger
                     key={tab.value}
                     value={tab.value}
-                    className="flex items-center gap-2 px-6 py-3 rounded-2xl data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg transition-all font-bold text-slate-600 text-sm hover:bg-slate-50"
+                    className="flex items-center gap-2 px-5 py-2.5 rounded-full data-[state=active]:bg-white data-[state=active]:text-blue-700 data-[state=active]:shadow-sm transition-all font-medium text-gray-600 text-sm hover:bg-gray-200/50"
                   >
                     <tab.icon className="h-5 w-5" strokeWidth={1.5} />
                     {tab.label}
@@ -502,9 +502,9 @@ export function DashboardPage() {
 
             {/* Clients Tab */}
             <TabsContent value="clients" className="space-y-8 outline-none">
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-10">
-                <Card className="rounded-2xl border border-slate-200/50 shadow-ambient-lg overflow-hidden bg-white">
-                  <CardHeader className="p-10 lg:p-10 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-10 bg-slate-50/50">
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-8 lg:gap-12">
+                <Card className="rounded-2xl border border-slate-200/50 shadow-lg overflow-hidden bg-white">
+                  <CardHeader className="p-10 lg:p-10 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-8 lg:gap-12 bg-slate-50/50">
                     <div>
                       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-black uppercase tracking-widest mb-4">
                         <Users className="size-3" />
@@ -519,7 +519,7 @@ export function DashboardPage() {
                           <Plus className="h-5 w-5 mr-2" strokeWidth={2} /> Onboard Client
                         </Button>
                       </DialogTrigger>
-                      <DialogContent className="rounded-2xl border-slate-200 p-10 shadow-ambient-lg bg-white/95 backdrop-blur-xl">
+                      <DialogContent className="rounded-2xl border-slate-200 p-10 shadow-lg bg-white/95 backdrop-blur-xl">
                         <DialogHeader>
                           <DialogTitle className="text-3xl font-black tracking-tight text-slate-900">New Client Registration</DialogTitle>
                           <DialogDescription className="text-slate-600 text-lg font-medium mt-2">Initialize a new secure client profile.</DialogDescription>
@@ -529,7 +529,7 @@ export function DashboardPage() {
                             <Label className="text-xs font-black uppercase tracking-widest text-slate-600">Legal Name</Label>
                             <Input name="clientName" placeholder="Rahul Sharma" required className="rounded-2xl h-14 bg-slate-50 border-slate-200 text-lg" />
                           </div>
-                          <div className="grid grid-cols-2 gap-10">
+                          <div className="grid grid-cols-2 gap-8 lg:gap-12">
                             <div className="space-y-3">
                               <Label className="text-xs font-black uppercase tracking-widest text-slate-600">Email Address</Label>
                               <Input name="clientEmail" type="email" placeholder="rahul@domain.com" required className="rounded-2xl h-14 bg-slate-50 border-slate-200" />
@@ -552,7 +552,7 @@ export function DashboardPage() {
                           placeholder="Search identity or records..."
                           value={searchTerm}
                           onChange={(e) => setSearchTerm(e.target.value)}
-                          className="pl-14 rounded-2xl h-14 border-slate-200 bg-slate-50/50 text-slate-900 font-medium text-lg placeholder:text-slate-600 transition-all focus:bg-white focus:shadow-ambient"
+                          className="pl-12 rounded-full h-12 flex-1 border-slate-200 bg-slate-50/50 text-slate-900 font-medium text-base placeholder:text-slate-500 transition-all focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                         />
                       </div>
                     </div>
@@ -560,23 +560,23 @@ export function DashboardPage() {
                       <Table>
                         <TableHeader>
                           <TableRow className="bg-slate-50/50 hover:bg-slate-50/50 border-b border-slate-100">
-                            <TableHead className="py-6 pl-10 text-[11px] font-black uppercase tracking-widest text-slate-600">Client Identity</TableHead>
+                            <TableHead className="py-4 pl-6 text-[11px] font-black uppercase tracking-widest text-slate-600">Client Identity</TableHead>
                             <TableHead className="text-[11px] font-black uppercase tracking-widest text-slate-600 text-center">Status</TableHead>
                             <TableHead className="text-[11px] font-black uppercase tracking-widest text-slate-600">Policies</TableHead>
-                            <TableHead className="text-[11px] font-black uppercase tracking-widest text-slate-600 text-right pr-10">Premium Vol.</TableHead>
+                            <TableHead className="text-[11px] font-black uppercase tracking-widest text-slate-600 text-right pr-6">Premium Vol.</TableHead>
                           </TableRow>
                         </TableHeader>
                         <TableBody>
                           {clients.filter(c => c.name.toLowerCase().includes(searchTerm.toLowerCase())).map((client) => (
-                            <TableRow key={client.id} className="group transition-all duration-300 hover:bg-slate-50/80 border-b border-slate-50 cursor-pointer">
-                              <TableCell className="py-6 pl-10">
+                            <TableRow key={client.id} className="group transition-all duration-200 hover:bg-gray-50 border-b border-gray-100 cursor-pointer">
+                              <TableCell className="py-4 pl-6">
                                 <div className="flex items-center gap-5">
                                   <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center font-black text-lg shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white">
                                     {client.name.charAt(0)}
                                   </div>
                                   <div>
-                                    <div className="font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors">{client.name}</div>
-                                    <div className="text-sm text-slate-600 font-medium">{client.email}</div>
+                                    <div className="font-bold text-slate-900 text-base group-hover:text-blue-600 transition-colors">{client.name}</div>
+                                    <div className="text-sm text-slate-500 font-medium">{client.email}</div>
                                   </div>
                                 </div>
                               </TableCell>
@@ -596,7 +596,7 @@ export function DashboardPage() {
                               <TableCell>
                                 <div className="font-black text-slate-900">{client.policies} <span className="text-slate-600 font-bold ml-1">Active</span></div>
                               </TableCell>
-                              <TableCell className="text-right pr-10 font-black text-slate-900 text-lg">
+                              <TableCell className="text-right pr-6 font-black text-slate-900 text-lg">
                                 ₹{Number(client.premium).toLocaleString()}
                               </TableCell>
                             </TableRow>
@@ -611,7 +611,7 @@ export function DashboardPage() {
 
             {/* Claims Tab */}
             <TabsContent value="claims" className="space-y-8 outline-none">
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-8 lg:gap-12 md:grid-cols-2 lg:grid-cols-3">
                 {claims.map((claim) => (
                   <Card key={claim.id} className="rounded-2xl border border-slate-200/50 shadow-sm overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-1 hover:border-blue-200 transition-all duration-300 bg-white">
                     <CardHeader className="p-10">
@@ -633,7 +633,7 @@ export function DashboardPage() {
                       <div className="flex items-center gap-5 pt-6 border-t border-slate-100">
                         <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform"><TrendingUp className="h-6 w-6" strokeWidth={2} /></div>
                         <div>
-                          <p className="text-[10px] font-black text-slate-600 uppercase tracking-widest mb-1">Estimated Value</p>
+                          <p className="text-sm text-gray-500 font-medium mb-1">Estimated Value</p>
                           <p className="text-2xl font-black text-slate-900 tracking-tight">{claim.amount}</p>
                         </div>
                       </div>
@@ -646,7 +646,7 @@ export function DashboardPage() {
             {/* Comparison Tab */}
             <TabsContent value="comparison" className="space-y-8 outline-none">
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-                <Card className="rounded-2xl border border-slate-200/50 shadow-ambient-lg overflow-hidden bg-white">
+                <Card className="rounded-2xl border border-slate-200/50 shadow-lg overflow-hidden bg-white">
                   <CardContent className="p-0">
                     <Table>
                       <TableHeader className="bg-slate-50/50">
@@ -656,13 +656,13 @@ export function DashboardPage() {
                           <TableHead className="text-[11px] font-black uppercase tracking-widest text-slate-600">Premium</TableHead>
                           <TableHead className="text-[11px] font-black uppercase tracking-widest text-slate-600">Coverage</TableHead>
                           <TableHead className="text-[11px] font-black uppercase tracking-widest text-slate-600">Rating</TableHead>
-                          <TableHead className="text-right pr-10 text-[11px] font-black uppercase tracking-widest text-slate-600">Action</TableHead>
+                          <TableHead className="text-right pr-6 text-[11px] font-black uppercase tracking-widest text-slate-600">Action</TableHead>
                         </TableRow>
                       </TableHeader>
                       <TableBody>
                         {sortedPolicies.map((p, i) => (
                           <TableRow key={i} className="border-b border-slate-50 hover:bg-slate-50/80 transition-colors group cursor-pointer">
-                            <TableCell className="py-6 pl-10 font-bold text-slate-900 text-lg group-hover:text-blue-600">{p.provider}</TableCell>
+                            <TableCell className="py-4 pl-6 font-bold text-slate-900 text-base font-semibold group-hover:text-blue-600">{p.provider}</TableCell>
                             <TableCell className="font-semibold text-slate-600">{p.plan}</TableCell>
                             <TableCell className="font-black text-slate-900 text-lg">{p.premium}</TableCell>
                             <TableCell className="font-medium text-slate-600">{p.coverage}</TableCell>
@@ -671,7 +671,7 @@ export function DashboardPage() {
                                 <span className="text-xs font-black text-amber-700">{p.rating} ★</span>
                               </div>
                             </TableCell>
-                            <TableCell className="text-right pr-10">
+                            <TableCell className="text-right pr-6">
                               <Button variant="ghost" className="rounded-2xl h-10 px-6 font-bold text-blue-600 hover:bg-blue-50">Select</Button>
                             </TableCell>
                           </TableRow>
@@ -685,9 +685,9 @@ export function DashboardPage() {
 
             {/* Documents Tab */}
             <TabsContent value="documents" className="space-y-8 outline-none">
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-10">
-                <Card className="rounded-2xl border border-slate-200/50 shadow-ambient-lg overflow-hidden bg-white">
-                  <CardHeader className="p-10 lg:p-10 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-10 bg-slate-50/50">
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-8 lg:gap-12">
+                <Card className="rounded-2xl border border-slate-200/50 shadow-lg overflow-hidden bg-white">
+                  <CardHeader className="p-10 lg:p-10 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-8 lg:gap-12 bg-slate-50/50">
                     <div>
                       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-black uppercase tracking-widest mb-4">
                         <Upload className="size-3" />
@@ -702,7 +702,7 @@ export function DashboardPage() {
                           <Upload className="h-5 w-5 mr-2" strokeWidth={2} /> Upload Record
                         </Button>
                       </DialogTrigger>
-                      <DialogContent className="rounded-2xl border-slate-200 p-10 shadow-ambient-lg bg-white/95 backdrop-blur-xl">
+                      <DialogContent className="rounded-2xl border-slate-200 p-10 shadow-lg bg-white/95 backdrop-blur-xl">
                         <DialogHeader><DialogTitle className="text-3xl font-black tracking-tight text-slate-900">Secure Asset Upload</DialogTitle></DialogHeader>
                         <form onSubmit={handleFileUpload} className="space-y-6 pt-6">
                           <div className="space-y-3">
@@ -726,14 +726,14 @@ export function DashboardPage() {
                     </Dialog>
                   </CardHeader>
                   <CardContent className="p-10 lg:p-10">
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-12">
                       {uploadedFiles.map((file) => (
                         <Card key={file.id} className="rounded-2xl border border-slate-200/70 shadow-sm hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-1 transition-all duration-300 group overflow-hidden bg-white hover:border-blue-200">
                           <CardContent className="p-10">
                             <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all"><FileText className="h-7 w-7" strokeWidth={1.5} /></div>
                             <div className="space-y-1.5">
                               <h4 className="font-bold text-slate-900 truncate tracking-tight text-lg">{file.name}</h4>
-                              <p className="text-[10px] font-black text-slate-600 uppercase tracking-widest">{file.size} • {file.type}</p>
+                              <p className="text-sm text-gray-500 font-medium">{file.size} • {file.type}</p>
                               <p className="text-xs font-medium text-slate-600 italic mt-2">{file.date}</p>
                             </div>
                             <div className="flex gap-2 mt-8 opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
@@ -751,9 +751,9 @@ export function DashboardPage() {
 
             {/* Reminders Tab */}
             <TabsContent value="reminders" className="space-y-8 outline-none">
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-10">
-                <Card className="rounded-2xl border border-slate-200/50 shadow-ambient-lg overflow-hidden bg-white">
-                  <CardHeader className="p-10 lg:p-10 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-10 bg-slate-50/50">
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-8 lg:gap-12">
+                <Card className="rounded-2xl border border-slate-200/50 shadow-lg overflow-hidden bg-white">
+                  <CardHeader className="p-10 lg:p-10 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-8 lg:gap-12 bg-slate-50/50">
                     <div>
                       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-black uppercase tracking-widest mb-4">
                         <Bell className="size-3" />
@@ -766,7 +766,7 @@ export function DashboardPage() {
                       <DialogTrigger asChild>
                         <Button className="rounded-2xl h-14 px-8 shadow-ambient bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all hover:scale-105 active:scale-95"><Plus className="h-5 w-5 mr-2" strokeWidth={2} /> Set Alert</Button>
                       </DialogTrigger>
-                      <DialogContent className="rounded-2xl border-slate-200 p-10 shadow-ambient-lg bg-white/95 backdrop-blur-xl">
+                      <DialogContent className="rounded-2xl border-slate-200 p-10 shadow-lg bg-white/95 backdrop-blur-xl">
                         <DialogHeader><DialogTitle className="text-3xl font-black tracking-tight text-slate-900">New Lifecycle Reminder</DialogTitle></DialogHeader>
                         <form onSubmit={handleCreateReminder} className="space-y-6 pt-6">
                           <div className="space-y-3">
@@ -778,7 +778,7 @@ export function DashboardPage() {
                               </SelectContent>
                             </Select>
                           </div>
-                          <div className="grid grid-cols-2 gap-10">
+                          <div className="grid grid-cols-2 gap-8 lg:gap-12">
                             <div className="space-y-3">
                               <Label className="text-xs font-black uppercase tracking-widest text-slate-600">Event Date</Label>
                               <Input type="date" value={reminderFormData.date} onChange={(e) => setReminderFormData(f => ({...f, date: e.target.value}))} className="rounded-2xl h-14 border-slate-200 text-lg" required />
@@ -807,11 +807,11 @@ export function DashboardPage() {
                   <CardContent className="p-10 lg:p-10">
                     <div className="space-y-4">
                       {reminders.length === 0 ? (
-                        <div className="text-center py-24 text-slate-600 font-bold text-lg">No active lifecycle alerts found.</div>
+                        <div className="text-center py-16 md:py-24 text-slate-600 font-bold text-lg">No active lifecycle alerts found.</div>
                       ) : (
                         reminders.map((reminder) => (
                           <div key={reminder.id} className={`flex items-center justify-between p-10 sm:p-10 rounded-2xl border transition-all duration-300 ${reminder.completed ? 'opacity-50 grayscale bg-slate-50 border-slate-100 text-slate-600' : 'bg-white border-slate-200/70 shadow-sm hover:shadow-ambient hover:border-blue-200 text-slate-900 group'}`}>
-                            <div className="flex items-center gap-10 flex-1">
+                            <div className="flex items-center gap-8 lg:gap-12 flex-1">
                               <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ${reminder.completed ? 'bg-slate-100 text-slate-600' : 'bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white'}`}>
                                 <Calendar className="h-7 w-7" strokeWidth={1.5} />
                               </div>
@@ -823,7 +823,7 @@ export function DashboardPage() {
                                 <p className="text-sm font-black text-slate-600 uppercase tracking-widest">{reminder.clientName}</p>
                               </div>
                             </div>
-                            <div className="flex items-center gap-10 sm:gap-10">
+                            <div className="flex items-center gap-8 lg:gap-12 sm:gap-8 lg:gap-12">
                               <Badge className={`uppercase tracking-widest text-[10px] font-black px-3 py-1 rounded-full ${reminder.priority === 'High' ? 'bg-red-50 text-red-600 border border-red-200' : reminder.priority === 'Medium' ? 'bg-amber-50 text-amber-600 border border-amber-200' : 'bg-slate-100 text-slate-600 border border-slate-200'}`}>{reminder.priority}</Badge>
                               <span className="text-sm font-black text-slate-600 tracking-tight hidden sm:block">{new Date(reminder.date).toLocaleDateString()}</span>
                               <div className="flex gap-2">
@@ -844,18 +844,18 @@ export function DashboardPage() {
 
             {/* Reports Tab */}
             <TabsContent value="reports" className="space-y-8 outline-none">
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-10">
-                <div className="grid md:grid-cols-2 gap-10">
-                  <Card className="rounded-2xl border border-slate-200/50 shadow-ambient-lg p-10 bg-white group">
-                    <CardHeader className="p-0 mb-16"><CardTitle className="text-2xl font-black text-slate-900 uppercase tracking-tight group-hover:text-blue-600 transition-colors">Revenue Matrix</CardTitle></CardHeader>
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-8 lg:gap-12">
+                <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+                  <Card className="rounded-2xl border border-slate-200/50 shadow-lg p-10 bg-white group">
+                    <CardHeader className="p-0 mb-8 md:mb-12"><CardTitle className="text-2xl font-black text-slate-900 uppercase tracking-tight group-hover:text-blue-600 transition-colors">Revenue Matrix</CardTitle></CardHeader>
                     <div className="h-[300px]">
                       <ResponsiveContainer width="100%" height="100%">
                         <BarChart data={salesData}><CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" /><XAxis dataKey="month" axisLine={false} tickLine={false} tick={{fontSize: 12, fill: '#94a3b8', fontWeight: 900}} /><YAxis hide /><RechartsTooltip cursor={{fill: '#f8fafc'}} contentStyle={{borderRadius: '1.5rem', border: '1px solid #e2e8f0', boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)', padding: '16px', fontWeight: 'bold'}} /><Bar dataKey="achieved" fill="#2563eb" radius={[6, 6, 0, 0]} barSize={40} /></BarChart>
                       </ResponsiveContainer>
                     </div>
                   </Card>
-                  <Card className="rounded-2xl border border-slate-200/50 shadow-ambient-lg p-10 bg-white group">
-                    <CardHeader className="p-0 mb-16"><CardTitle className="text-2xl font-black text-slate-900 uppercase tracking-tight group-hover:text-blue-600 transition-colors">Growth Velocity</CardTitle></CardHeader>
+                  <Card className="rounded-2xl border border-slate-200/50 shadow-lg p-10 bg-white group">
+                    <CardHeader className="p-0 mb-8 md:mb-12"><CardTitle className="text-2xl font-black text-slate-900 uppercase tracking-tight group-hover:text-blue-600 transition-colors">Growth Velocity</CardTitle></CardHeader>
                     <div className="h-[300px]">
                       <ResponsiveContainer width="100%" height="100%">
                         <LineChart data={salesData}><CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" /><XAxis dataKey="month" hide /><YAxis hide /><RechartsTooltip cursor={{stroke: '#e2e8f0', strokeWidth: 2, strokeDasharray: '4 4'}} contentStyle={{borderRadius: '1.5rem', border: '1px solid #e2e8f0', padding: '16px', fontWeight: 'bold', boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1)'}} /><Line type="monotone" dataKey="achieved" stroke="#2563eb" strokeWidth={4} dot={{r: 6, fill: '#2563eb', strokeWidth: 3, stroke: '#fff'}} activeDot={{r: 8, strokeWidth: 4}} /></LineChart>
@@ -869,7 +869,7 @@ export function DashboardPage() {
             {/* Marketing Tab */}
             <TabsContent value="marketing" className="space-y-8 outline-none">
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-                <Card className="rounded-2xl border border-slate-200/50 shadow-ambient-lg overflow-hidden bg-white">
+                <Card className="rounded-2xl border border-slate-200/50 shadow-lg overflow-hidden bg-white">
                   <CardHeader className="p-10 lg:p-12 relative overflow-hidden bg-slate-50">
                     <div className="absolute inset-0 pointer-events-none opacity-40">
                       <div className="absolute -top-10 -right-10 w-96 h-96 bg-blue-500 shrink-0 blur-[100px] rounded-full" />
@@ -883,7 +883,7 @@ export function DashboardPage() {
                       <CardDescription className="text-slate-600 font-medium text-lg">Generate premium institutional collateral</CardDescription>
                     </div>
                   </CardHeader>
-                  <CardContent className="p-10 lg:p-12 grid md:grid-cols-2 gap-12 bg-slate-50/50">
+                  <CardContent className="p-10 lg:p-12 grid md:grid-cols-2 gap-8 lg:gap-12 bg-slate-50/50">
                     <div className="space-y-8">
                       <div>
                         <Label className="text-xs font-black uppercase tracking-widest text-slate-600 block mb-6">Distribution Platforms</Label>
@@ -908,7 +908,7 @@ export function DashboardPage() {
                         <Sparkles className="h-10 w-10 animate-pulse" strokeWidth={1.5} />
                       </div>
                       <h4 className="text-2xl font-black text-slate-900 mb-3 tracking-tight">Creative Direction</h4>
-                      <p className="text-lg text-slate-600 max-w-sm mb-16 font-medium">Select a campaign theme to generate AI-driven institutional assets and copy.</p>
+                      <p className="text-lg text-slate-600 max-w-sm mb-8 md:mb-12 font-medium">Select a campaign theme to generate AI-driven institutional assets and copy.</p>
                       <Button className="rounded-2xl h-14 px-10 shadow-ambient bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg transition-all hover:scale-105">Activate AURA™ AI</Button>
                     </div>
                   </CardContent>

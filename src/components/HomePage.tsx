@@ -65,7 +65,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Hero Section — starts flush after 72px sticky nav */}
       <section 
         id="home"
-        className="relative text-white pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[100vh] flex items-center"
+        className="relative text-white pb-16 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[100vh] flex items-center"
         style={{
           background: 'linear-gradient(160deg, #0a1628 0%, #0052CC 35%, #0059E6 65%, #0066FF 100%)',
           paddingTop: '56px',
@@ -82,8 +82,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-400/5 to-blue-500/5 blur-[200px] rounded-full" style={{ pointerEvents: 'none' }}></div>
         </div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -91,7 +91,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             >
               {/* Premium badge */}
               <motion.div 
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/40 text-white text-xs font-bold uppercase tracking-widest mb-16 backdrop-blur-md"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/40 text-white text-xs font-bold uppercase tracking-widest mb-8 md:mb-12 backdrop-blur-md"
                 initial={{ opacity: 0, y: -20, scale: 0.8 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
@@ -143,7 +143,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
               {/* Enhanced subheading */}
               <motion.p 
-                className="text-lg md:text-xl mb-16 leading-loose max-w-2xl font-medium"
+                className="text-lg md:text-xl mb-8 md:mb-12 leading-relaxed max-w-2xl font-medium"
                 style={{ color: 'rgba(224, 242, 254, 0.92)', textShadow: '0 1px 8px rgba(0,0,0,0.25)' }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -154,7 +154,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
               {/* CTA Buttons — pill-shaped, generously spaced */}
               <motion.div 
-                className="flex flex-col sm:flex-row items-center gap-12 pt-10"
+                className="flex flex-col sm:flex-row items-center gap-8 lg:gap-12 pt-16 md:pt-24"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
@@ -296,7 +296,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 transition={{ delay: 0.8, duration: 0.8 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="flex items-center gap-12">
+                <div className="flex items-center gap-8 lg:gap-12">
                   <motion.div 
                     className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white font-bold shadow-lg"
                     animate={{ rotate: [0, 10, -10, 0] }}
@@ -319,7 +319,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 transition={{ delay: 1, duration: 0.8 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="flex items-center gap-12">
+                <div className="flex items-center gap-8 lg:gap-12">
                   <motion.div 
                     className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold shadow-lg"
                     animate={{ scale: [1, 1.1, 1] }}
@@ -342,7 +342,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 transition={{ delay: 1.2, duration: 0.8 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="flex items-center gap-12">
+                <div className="flex items-center gap-8 lg:gap-12">
                   <motion.div 
                     className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold shadow-lg"
                     animate={{ y: [0, -5, 0] }}
@@ -362,15 +362,15 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Pain Points Solved */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Enterprise Infrastructure for Individual Agents</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto font-medium lead-relaxed">
               We solve the messy spreadsheets and manual follow-ups that slow down your growth.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
             {[
               { title: "Scattered Information", desc: "Bring all KYC, policies, and emails into one encrypted workspace." },
               { title: "Missed Renewals", desc: "Automated WhatsApp and SMS alerts ensure you never miss a client deadline." },
@@ -389,7 +389,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     <CardTitle className="text-xl font-bold text-slate-900">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-600 font-medium leading-loose">
+                    <p className="text-slate-600 font-medium leading-relaxed">
                       {item.desc}
                     </p>
                   </CardContent>
@@ -403,20 +403,20 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Key Features */}
       <section 
         id="features"
-        className="py-32 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]"
+        className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]"
       >
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Built for Growth</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto font-medium">
               Everything you need to manage and scale your insurance business in one unified vertical.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             {features.map((feature, index) => (
               <motion.div 
                 key={index} 
-                className="flex gap-10 items-start"
+                className="flex gap-8 lg:gap-12 items-start"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -429,7 +429,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
-                  <p className="text-slate-600 font-medium leading-loose">{feature.description}</p>
+                  <p className="text-slate-600 font-medium leading-relaxed">{feature.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -440,16 +440,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Differentiators */}
       <section 
         id="products"
-        className="py-32 px-4 sm:px-6 lg:px-8 bg-blue-50/20"
+        className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-blue-50/20"
       >
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-10 tracking-tight leading-[1.1]">Built Specifically for the Indian Market</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 md:mb-12 tracking-tight leading-[1.1]">Built Specifically for the Indian Market</h2>
               <div className="space-y-6">
                 {[
                   "IRDAI Compliant Infrastructure",
@@ -457,7 +457,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   "Indian Payment Gateway Support",
                   "Vernacular Language Content Generation"
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-12">
+                  <div key={i} className="flex items-center gap-8 lg:gap-12">
                     <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white">
                       <CheckCircle className="size-4" />
                     </div>
@@ -482,15 +482,15 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Trusted by 5,000+ Agents</h2>
             <p className="text-xl text-slate-600 font-medium">
               Join the new generation of digital-first insurance experts.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
@@ -505,7 +505,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     <CardDescription className="text-blue-600 font-bold text-xs uppercase tracking-wider">{testimonial.role}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-600 font-medium italic leading-loose text-lg">"{testimonial.quote}"</p>
+                    <p className="text-slate-600 font-medium italic leading-relaxed text-lg">"{testimonial.quote}"</p>
                   </CardContent>
                 </Card>
               </motion.div>
